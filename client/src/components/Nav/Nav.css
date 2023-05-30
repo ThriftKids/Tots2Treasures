@@ -1,0 +1,63 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.navList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+}
+
+.authButtons {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  font-size: larger;
+  font-weight: 400;
+  border-radius: 10px;
+}
+
+.navLink {
+  padding: 5px;
+}
+
+.navList .navLink:hover {
+  color: rgb(4, 208, 248);
+  border-radius: 10px;
+  background-color: bisque;
+  transition: 0.5s ;
+}
+.loginButton{
+    padding: 5px;
+}
+.loginButton:hover {
+  color: rgb(4, 208, 248);
+  border-radius: 10px;
+  background-color: bisque;
+  transition: 0.5s;
+}
+
+.signupButton{
+    padding: 5px;
+}
+.signupButton:hover {
+  color: rgb(4, 208, 248);
+  border-radius: 10px;
+  background-color: bisque;
+  transition: 0.5s;
+}
+
+.logoutButton{
+    padding: 5px;
+}
+.logoutButton:hover {
+  color: rgb(4, 208, 248);
+  border-radius: 10px;
+  background-color: bisque;
+  transition: 0.5s;
+}
