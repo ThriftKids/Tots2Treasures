@@ -1,11 +1,11 @@
 import React from 'react'
-import "./Dashaboard.css"
+import "./Dashboard.css"
 import DashboardCard from '../utils/DashboardCard'
 import testImage from '../images/testImage.jpg'
 import one from '../images/one.jpg'
 
 
-const Dashaboard = () => {
+const Dashboard = () => {
   return (
     <div className='dashboard'>
         <ul className='categoryList'>
@@ -27,4 +27,4 @@ const Dashaboard = () => {
   )
 }
 
-export default Dashaboard
+export default Dashboard
