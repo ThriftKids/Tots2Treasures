@@ -24,6 +24,7 @@
 
 .navLink {
   padding: 5px;
+  text-decoration: none;
 }
 
 .navList .navLink:hover {

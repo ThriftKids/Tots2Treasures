@@ -34,6 +34,7 @@ const SignupForm = () => {
         </div>
         <label>
           <input
+          className="authInputField"
             type="email"
             placeholder="Email"
             value={email}
@@ -43,6 +44,7 @@ const SignupForm = () => {
 
         <label>
           <input
+          className="authInputField"
             type="password"
             placeholder="Password"
             value={password}
@@ -52,6 +54,7 @@ const SignupForm = () => {
 
         <label>
           <input
+          className="authInputField"
             type="password"
             placeholder="Confirm Password"
             value={confirmPassword}
@@ -59,7 +62,7 @@ const SignupForm = () => {
           />
         </label>
         <div className="centerContent">
-          <button type="submit">Sign Up</button>
+          <button className="loginButton" type="submit">Sign Up</button>
         </div>
       </form>
     </div>

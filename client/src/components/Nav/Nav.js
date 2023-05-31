@@ -6,16 +6,25 @@ function Nav() {
     <div className="nav">
       <ul className="navList">
         <li>
-          <p className="navLink">Dashboard</p>
+          <a href="/" className="navLink">
+            Dashboard
+          </a>
+        </li>
+
+        <li>
+          <a href="/purchases" className="navLink">
+            Purchases
+          </a>
         </li>
         <li>
-          <p className="navLink">Orders</p>
+          <a href="/inventory" className="navLink">
+            Inventory
+          </a>
         </li>
         <li>
-          <p className="navLink">Account</p>
-        </li>
-        <li>
-          <p className="navLink">Cart</p>
+          <a href="/cart" className="navLink">
+            Cart
+          </a>
         </li>
       </ul>
     </div>

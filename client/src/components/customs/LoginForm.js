@@ -28,7 +28,7 @@ const LoginForm = () => {
           <p>Sign In</p>
         </div>
         <label>
-          <input
+          <input className="authInputField"
             type="email"
             placeholder="Email"
             value={email}
@@ -37,7 +37,7 @@ const LoginForm = () => {
         </label>
 
         <label>
-          <input
+          <input className="authInputField"
             type="password"
             placeholder="Password"
             value={password}
@@ -45,7 +45,7 @@ const LoginForm = () => {
           />
         </label>
         <div className="centerContent">
-          <button type="submit">Login</button>
+          <button className="loginButton" type="submit">Login</button>
         </div>
       </form>
     </div>

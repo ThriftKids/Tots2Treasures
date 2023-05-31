@@ -40,8 +40,8 @@
   color: rgb(4, 208, 248);
 }
 
-input:focus,
-input[type="text"]:focus {
+.authInputField:focus,
+.authInputField[type="text"]:focus {
   background-color: bisque;
   outline: none;
   border-top: none;
@@ -50,7 +50,7 @@ input[type="text"]:focus {
   border-bottom: 1px solid black;
 }
 
-input {
+.authInputField {
     border: none;
     border-radius: 5px;
     padding: 5%;
