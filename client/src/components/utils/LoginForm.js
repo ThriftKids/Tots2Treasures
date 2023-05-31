@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './LoginForm.css'
+import "./LoginForm.css";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -22,28 +22,34 @@ const LoginForm = () => {
   };
 
   return (
-    <div className='loginContainer'>
-    <form className='loginForm'onSubmit={handleSubmit}>
-      <p>Sign In</p>
-      <label>
-        Email:
-        <input type="email" value={email} onChange={handleEmailChange} />
-      </label>
-      <br />
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          onChange={handlePasswordChange}
-        />
-      </label>
-      <br />
-      <button type="submit">Login</button>
-    </form>
+    <div className="loginContainer">
+      <form className="loginForm" onSubmit={handleSubmit}>
+        <div className="centerContent">
+          <p>Sign In</p>
+        </div>
+        <label>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={handleEmailChange}
+          />
+        </label>
+
+        <label>
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={handlePasswordChange}
+          />
+        </label>
+        <div className="centerContent">
+          <button type="submit">Login</button>
+        </div>
+      </form>
     </div>
   );
 };
 
 export default LoginForm;
-
