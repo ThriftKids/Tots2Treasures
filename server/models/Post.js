@@ -7,6 +7,11 @@ const postSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  postId: {
+    type: String,
+    required: true,
+    default: Schema.Types.ObjectId,
+  },
   products: [
     {
       type: Schema.Types.ObjectId,

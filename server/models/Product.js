@@ -20,6 +20,12 @@ const productSchema = new Schema({
     min: 0.99
   },
 
+  productId: {
+    type: String,
+    required: true,
+    default: Schema.Types.ObjectId,
+  },
+
   Tag: {
     type: Schema.Types.ObjectId,
     ref: 'Tag',
