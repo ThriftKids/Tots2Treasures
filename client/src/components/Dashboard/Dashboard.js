@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Dashboard.css"
-import DashboardCard from '../utils/DashboardCard'
+import DashboardCard from '../customs/DashboardCard'
 import testImage from '../images/testImage.jpg'
 import one from '../images/one.jpg'
 

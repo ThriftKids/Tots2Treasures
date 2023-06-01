@@ -6,18 +6,18 @@ const Header = () => {
   return (
     <header>
       <div className="header">
-        <h1>Tots2Treasure</h1>
+        <h1>Tots2Treasures</h1>
 
         <ul className="authButtons">
         <Nav />
           <li>
-            <p className="loginButton">Login</p>
+            <a href='/login'className="loginButton">Login</a>
           </li>
           <li>
-            <p className="signupButton">Signup</p>
+            <a href='/signup' className="signupButton">Signup</a>
           </li>
           <li>
-            <p className="logoutButton">Logout</p>
+            <a href='/logout' className="logoutButton">Logout</a>
           </li>
         </ul>
       </div>
