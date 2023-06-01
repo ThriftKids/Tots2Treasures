@@ -1,68 +1,69 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Tots2Treasures - Online Marketplace for Kids' Clothes and Toys
 
-## Available Scripts
+Tots2Treasures is an online marketplace where users can post and sell gently used children's clothes and toys. It provides a platform for parents and caregivers to find affordable, high-quality items for their children while also allowing sellers to declutter and earn some extra money by selling items that their own children have outgrown.
 
-In the project directory, you can run:
+## Features
 
-### `yarn start`
+- **User Registration and Authentication**: Users can create accounts and log in to the website to access all the features, including posting items for sale and making purchases.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Item Listing and Search**: Sellers can easily create listings for the clothes and toys they want to sell. Buyers can search for specific items, filter by category, and browse through available listings.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- **Secure Payment Integration**: Buyers can securely make payments for their purchases using a payment gateway integrated into the website.
 
-### `yarn test`
+- **User Profiles**: Users have profiles where they can view their listings, track their purchase history, and view their shopping carts. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `yarn build`
+To run the Tots2Treasures website locally, follow these steps:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+git clone https://github.com/ThriftKids/Tots2Treasures.git
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+2. Install dependencies:
+cd Tots2Treasures
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Set up the database:
+- Rename the `.env.example` file to `.env` and update the database connection details.
 
-### `yarn eject`
+4. Run database migrations:
+npx sequelize-cli db:migrate
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+5. Start the server:
+npm start
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+6. Open your web browser and navigate to `http://localhost:3000` to access the Tots2Treasures website.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Technologies Used
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Front-end: HTML, CSS, JavaScript, React
+- Back-end: Node.js, Express.js
+- Database: Sequelize ORM
+- Payment Integration: Stripe
 
-## Learn More
+## Contributing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Contributions to the Children's Closet project are welcome! If you would like to contribute, please follow these steps:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Fork the repository and create your branch:
+git checkout -b feature/your-feature-name
 
-### Code Splitting
+2. Make your changes and commit them:
+git commit -m "Your commit message"
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+3. Push your changes to your branch:
+git push origin feature/your-feature-name
 
-### Analyzing the Bundle Size
+4. Open a pull request on GitHub, and provide a clear description of your changes and the motivation behind them.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## License
 
-### Making a Progressive Web App
+This project is licensed under the [MIT License](LICENSE).
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## Contact
 
-### Advanced Configuration
+If you have any questions or suggestions, please feel free to reach out to us:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- Email: info@Tots2Treasures.com
 
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+We appreciate your interest in Tots2Treasures and welcome your feedback!
