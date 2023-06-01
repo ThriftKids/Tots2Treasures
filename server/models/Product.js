@@ -30,7 +30,17 @@ const productSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Tag',
     required: true
-  }
+  },
+  userId: {
+    type: String,
+    required: true,
+    default: Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  purchaseDate: {
+    type: Date,
+    default: Date.now
+  },
 });
 
 const Product = mongoose.model('Product', productSchema);
