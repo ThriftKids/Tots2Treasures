@@ -12,6 +12,12 @@ const postSchema = new Schema({
     required: true,
     default: Schema.Types.ObjectId,
   },
+  userId: {
+    type: String,
+    required: true,
+    default: Schema.Types.ObjectId,
+    ref: 'User'
+  },
   products: [
     {
       type: Schema.Types.ObjectId,
