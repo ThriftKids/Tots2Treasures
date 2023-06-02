@@ -1,14 +1,16 @@
 .nav {
   display: flex;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 0px 20px;
+  align-items: end;
 }
 .navList {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   list-style: none;
   gap: 20px;
+  padding-bottom: 4px;
 }
 
 .authButtons {
@@ -23,14 +25,25 @@
 }
 
 .navLink {
-  padding: 5px;
+  padding: 5px 20px;
   text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: 0.5s ease-in-out;
+
+
+}
+
+.active{
+  background-color: bisque;
+  border: 1px solid black;
+  border-bottom: none;
 }
 
 .navList .navLink:hover {
   color: rgb(4, 208, 248);
-  border-radius: 10px;
-  background-color: bisque;
+  /* border-radius: 10px; */
+  /* background-color: bisque; */
   transition: 0.5s ;
 }
 .loginButton{
