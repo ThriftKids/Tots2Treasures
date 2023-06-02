@@ -9,24 +9,55 @@ import Cart from "./components/Cart/Cart";
 import Inventory from "./components/Inventory/Inventory";
 import Purchases from "./components/Purchases/Purchases";
 import "./App.css";
+import { StoreProvider } from "./utils/GlobalState";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 import Final from "./components/Final/Final";
+
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 const App = () => {
   return (
     <div>
-      <Header />
-      <Routes>
-        <Route exact path="/" element={<Dashboard />} />
+      <ApolloProvider client={client}>
+        <Header />
+          <StoreProvider>
+            <Routes>
+              <Route exact path="/" element={<Dashboard />} />
 
-        <Route path="/purchases" element={<Purchases />} />
-        <Route path="/inventory" element={<Inventory />} />
+              <Route path="/purchases" element={<Purchases />} />
+              <Route path="/inventory" element={<Inventory />} />
 
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/signup" element={<SignupForm />} />
-        <Route path="/login" element={<LoginForm />} />
-        <Route path="/final" element={<Final/>} />
-      </Routes>
-      <Footer />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/signup" element={<SignupForm />} />
+              <Route path="/login" element={<LoginForm />} />
+              <Route path="/final" element={<Final/>}/>
+            </Routes>
+          </StoreProvider>
+        <Footer />
+      </ApolloProvider>
     </div>
   );
 };
