@@ -1,12 +1,13 @@
 import React from "react";
 import "./Header.css";
 import Nav from "../Nav/Nav";
-
+import logoImg from "../images/tots2treasures.png"
 const Header = () => {
   return (
     <header>
       <div className="header">
-        <h1>Tots2Treasures</h1>
+        <h1><img className="t2tLogo" src={logoImg} alt="logo"></img></h1>
+        
 
         <ul className="authButtons">
         <Nav />

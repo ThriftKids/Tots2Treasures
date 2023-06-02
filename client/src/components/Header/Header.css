@@ -2,14 +2,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 30px;
+    padding: 10px 20px;
     background-color: rgb(191, 238, 238);
     top: 0;
 }
-
+/* 
 .header h1{
     background-image: 
     linear-gradient(90deg,red,green,blue);
     background-clip: text;
     color: transparent;
+} */
+.t2tLogo{
+    width: 9%;
+    background-color: bisque;
+    border-radius: 50px;
+    /* padding: 0;
+    margin: 0; */
 }

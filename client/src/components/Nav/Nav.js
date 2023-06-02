@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Nav.css";
+import  Cart  from "../Cart/Cart.js";
 
 function Nav() {
+
+  const [show, setShow] = useState(false)
   return (
     <div className="nav">
       <ul className="navList">
@@ -22,10 +25,11 @@ function Nav() {
           </a>
         </li>
         <li>
-          <a href="/cart" className="cartLogo navLink">
-          <i class="fa-solid fa-cart-shopping fa-xl fa-10x "></i>
+          <a onClick={()=>{setShow(true)}} className="cartLogo navLink">
+            <i class="fa-solid fa-cart-shopping fa-xl fa-10x "></i>
           </a>
         </li>
+        <Cart onClose={() => setShow(false)} show={show} />
       </ul>
     </div>
   );

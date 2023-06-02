@@ -19,10 +19,70 @@
 .cartCard i{
     color: red;
     font-size: 20px;
-    height: 20vh;
+   margin-bottom: 0;
 }
 
 .cartCard img{
     width: 200px;
     object-fit: cover;
+}
+
+.modal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.cartContent{
+    background-color: rgb(191, 238, 238);
+    border-radius: 10px;
+}
+.closeCartButton{
+font-size: large;
+font-weight: bold;
+background-color: bisque;
+border: none;
+
+}
+.closeCartButtonContainer{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    background-color: bisque;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.shoppingCartTitle{
+    padding-bottom: 15px ;
+}
+.cartFooterContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+.purchaseCartButton{
+    padding: 2% 19%;
+    font-size: large;
+    border: none;
+    border-radius: 7px;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.purchaseCartButton:hover{
+    background-color: bisque;
+  color: rgb(4, 208, 248);
 }

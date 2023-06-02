@@ -8,9 +8,9 @@ const CartCard = (props) => {
         <div className="column content">
           <h3>{props.title}</h3>
           <p>{props.price}</p>
+          <i class="fa-sharp fa-solid fa-trash"></i>
         </div>
       </div>
-      <i class="fa-sharp fa-solid fa-trash"></i>
     </div>
   );
 };
