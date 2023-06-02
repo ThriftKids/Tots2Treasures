@@ -26,9 +26,7 @@ const Header = () => {
           <li>
             <a href='/login'className="loginButton">Login</a>
           </li>
-          <li>
-            <a href='/signup' className="signupButton">Signup</a>
-          </li>
+          
           <li>
             <a href='/logout' className="logoutButton">Logout</a>
           </li>

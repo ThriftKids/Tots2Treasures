@@ -6,7 +6,7 @@
 }
 
 .loginForm {
-  width: 10%;
+  width: 400px;
   display: flex;
   flex-direction: column;
   padding: 3% 3% 4% 2%;
@@ -19,12 +19,14 @@
 
 .centerContent {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
 .centerContent > p {
   font-size: larger;
   font-weight: 600;
+  gap: 15px;
 }
 
 .centerContent > button {
@@ -53,8 +55,5 @@
 .authInputField {
     border: none;
     border-radius: 5px;
-    padding: 5%;
-    width: 100%;
-    height: 20px;
   }
   
