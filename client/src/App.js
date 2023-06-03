@@ -18,6 +18,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import Final from "./components/Final/Final";
+import Error from "./components/404Error/404Error";
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -53,7 +54,8 @@ const App = () => {
               <Route path="/cart" element={<Cart />} />
               <Route path="/signup" element={<SignupForm />} />
               <Route path="/login" element={<LoginForm />} />
-              <Route path="/final" element={<Final transactionFailed={false} />}/>
+              <Route path="/final" element={<Final transactionFailed={true} />}/>
+              <Route path="*" element={<Error/>} />
             </Routes>
           </StoreProvider>
         <Footer />
