@@ -12,7 +12,9 @@
 
 .historyContainer{
     gap: 20px;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
+    height: 71vh;
+    overflow-y: scroll;
 }
 
 .purchaseCard{
@@ -25,6 +27,7 @@
 
 .imgAndName{
     gap: 20px;
+    padding: 10px;
 }
 .imgAndName .content{
     gap: 15px;
@@ -33,5 +36,6 @@
 .purchaseCard img{
     object-fit: cover;
     width: 200px;
+    height: 180px;
     border: 18px;
 }
