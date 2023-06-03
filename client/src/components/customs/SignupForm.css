@@ -35,13 +35,14 @@
   font-size: large;
   border: none;
   border-radius: 7px;
-  transition: background-color 0.5s, color 0.5s;
-  
+  transition: all 0.5s ease-in-out;
   
 }
 .centerContent>button:hover{
   background-color: bisque;
   color: rgb(4, 208, 248); 
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
 }
 
 /* Applying background color and border to focused input fields */

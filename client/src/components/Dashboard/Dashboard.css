@@ -17,12 +17,14 @@
   background-color: bisque;
   font-size: larger;
   font-weight: bold;
+ 
 
 }
 .categoryList .category {
   padding: 5px 20px;
   border-radius: 10px;
   transition: 0.2s ease-in-out;
+ 
 }
 
 .dashboardCard {
@@ -82,6 +84,7 @@
   width: 130px;
   height: 30px;
   font-weight: bold;
+  transition: all 0.5s ease-in-out;
 }
 
 /* hovers */
@@ -90,13 +93,22 @@
   background-color: white;
   border: solid;
   border-color: rgb(0, 119, 255);
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
 }
 .categoryList .category:hover {
   background-color: rgba(179, 242, 255, 1);
   color: rgb(210, 134, 41);
   cursor: pointer;
   transition: 0.5s;
+   box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+  
 }
+
+
+
+
 
 .dashboardCard:hover {
   transition: 1s linear;

@@ -46,15 +46,39 @@
 .submitButton{
   display: flex;
   justify-content: center;
+  align-self: center;
   width: 10%;
   padding: 2% 19%;
   font-size: large;
   border: none;
   border-radius: 7px;
-  transition: background-color 0.5s, color 0.5s;
+  /* transition: background-color 0.5s, color 0.5s; */
+  transition: all 235ms ease-in-out;
 }
 
 .submitButton:hover{
   background-color: bisque;
   color: rgb(4, 208, 248);
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.categoriesCheckbox{
+  display: flex;
+  align-self: center;
+}
+
+
+.checkboxLabel {
+  margin-right: 50px;
+}
+
+.checkboxText{
+  margin-left: 8px;
+  font-size:large;
+  font-weight: 400;
+}
+.categoryTitle{
+
+  margin-right: 45px;
 }
