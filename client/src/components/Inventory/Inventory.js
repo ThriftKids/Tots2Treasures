@@ -67,6 +67,15 @@ const CheckboxGroup = () => {
 };
 
 const Inventory = () => {
+
+  const [file, setfile] = useState(null)
+
+  const handleChange= (e)=>{
+    setfile(URL.createObjectURL(e.target.files[0]))
+  }
+
+
+
   return (
     <div>
       <div>
@@ -96,7 +105,9 @@ const Inventory = () => {
             className="yourImageToUpload"
             type="file"
             accept=".png,.jpg,.jpeg"
+            onChange={handleChange}
           />
+          <img className="previewImage" src={file}/>
           <input className="submitButton" type="submit" />
         </form>
       </div>
