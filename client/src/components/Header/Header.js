@@ -24,12 +24,12 @@ const Header = () => {
         </li>
         <Cart onClose={() => setShow(false)} show={show} />
           <li>
-            <a href='/login'className="loginButton">Login</a>
+            <a href='/login'className="headerLoginButton">Login</a>
           </li>
           
-          <li>
+          {/* <li>
             <a href='/logout' className="logoutButton">Logout</a>
-          </li>
+          </li> */}
         </ul>
       </div>
     </header>

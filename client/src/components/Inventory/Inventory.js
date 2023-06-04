@@ -20,13 +20,24 @@ const CheckboxGroup = () => {
   return (
     <div className="categoriesCheckbox">
       <p className="categoryTitle">Pick a category for your item:</p>
-      <label className="checkboxLabel">
+      <label className="checkboxLabel flipBox">
         <input
           type="checkbox"
           checked={checkboxes[0]}
           onChange={() => handleCheckboxChange(0)}
         />
         <span className="checkboxText">Toys</span>
+        <div className="flipBox_boxOuter">
+      <div className="flipBox_box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div className="flipBox_shadow"></div>
       </label>
 
       <label className="checkboxLabel">

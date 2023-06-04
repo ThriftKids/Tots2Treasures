@@ -95,6 +95,7 @@
 
 .previewImage{
   align-self: center;
-  width: 200px;
+  width: fit-content;
   height: 250px;
 }
+

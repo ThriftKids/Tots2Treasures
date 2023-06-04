@@ -17,3 +17,28 @@
 .tabContainer {
   display: flex;
 }
+@media only screen and (max-width: 622px){
+  .t2tLogo{
+    margin-top: 20px;
+    width:50px;
+    height: 50px;
+  }
+
+}
+
+@media only screen and (max-width: 584px){
+.cartLogo i{
+ font-size: 1rem;
+ padding: 0px;
+}
+a.headerLoginButton{
+ font-size: 15px;
+ 
+}
+.header{
+  padding: 0;
+}
+}
+@media only screen and (max-width: 540px){
+  
+}
