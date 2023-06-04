@@ -59,7 +59,6 @@ const resolvers = {
 
         line_items.push({
           price: price.id,
-          quantity: 1
         });
       }
 
@@ -100,10 +99,8 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
-    updateProduct: async (parent, { _id, quantity }) => {
-      const decrement = Math.abs(quantity) * -1;
-
-      return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
+    updateProduct: async (parent, { _id }) => {
+      return await Product.findByIdAndDelete(_id);
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
