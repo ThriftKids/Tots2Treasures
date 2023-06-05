@@ -32,6 +32,7 @@ const Cart = () => {
     async function getCart() {
       const cart = await idbPromise('cart', 'get');
       dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
+      console.log(cart);
     }
 
     if (!state.cart.length) {
@@ -60,6 +61,11 @@ const Cart = () => {
             <CartCard title="Title 1" price="$100" img={one} />
             <CartCard title="Title 1" price="$100" img={testImage} />
             <CartCard title="Title 1" price="$100" img={one} />
+            {
+              state.cart.map((item) => (
+                <CartCard key={item.productId} title={item.title} price={item.price} img={one} />
+              ))
+            }
 
             <button onClick={submitCheckout}>Checkout</button>
         </div>

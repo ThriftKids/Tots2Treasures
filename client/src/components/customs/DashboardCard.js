@@ -47,8 +47,14 @@ const DashboardCard = (item) => {
         type: ADD_TO_CART,
         product: { ...item }
       });
+<<<<<<< HEAD
       console.log(itemInCart);
       idbPromise('cart', 'put', { ...item });
+=======
+      // made changes, removed double curly brackets
+      console.log(item);
+      idbPromise('cart', 'put', item );
+>>>>>>> b03a284491a26f97d3070ee1ed3aaf86978ec40f
     }
   }
   return (
