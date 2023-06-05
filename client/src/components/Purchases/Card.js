@@ -2,8 +2,8 @@ import React from "react";
 
 const PurchasesCard = (props) => {
   return (
-    <div className="row purchaseCard">
-      <div className="row imgAndName">
+    <div className="purchaseCard">
+      <div className="imgAndName">
         <img src={props.img} alt={props.title} />
         <div className="column content">
           <h3>{props.title}</h3>

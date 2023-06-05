@@ -18,19 +18,28 @@
 }
 
 .purchaseCard{
+    display: flex;
+    width: 94vw;
+    /* flex-wrap: wrap; */
     background-color: white;
-    height: 20vh;
+    /* height: 30vh; */
     padding: 10px;
     border-radius: 10px;
     justify-content: space-between;
 }
 
 .imgAndName{
+    display: flex;
     gap: 20px;
+    width: 90%;
     padding: 10px;
 }
 .imgAndName .content{
-    gap: 15px;
+    gap: 8px;
+}
+
+.imgAndName .content p{
+    flex-wrap: wrap;
 }
 
 .purchaseCard img{
@@ -39,3 +48,48 @@
     height: 180px;
     border: 18px;
 }
+
+@media only screen and (max-width: 1259px){
+
+.purchaseCard{
+    width: 90vw;
+}
+
+
+}
+
+
+@media only screen and (max-width: 755px){
+
+    .purchaseCard{
+        width: 85vw;
+    }
+    .imgAndName .content p{
+        width: 85%;
+    }
+    
+    }
+
+    @media only screen and (max-width: 555px){
+     .purchaseCard{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+     }
+
+     .imgAndName{
+        display: flex;
+        flex-direction: column;
+     }
+     .historyContainer{
+        height: 75vh;
+     }
+    }
+
+    @media only screen and (max-width: 505px){
+.purchaseCard{
+    width: 90%;
+}
+
+    }
