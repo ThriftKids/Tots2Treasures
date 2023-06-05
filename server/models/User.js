@@ -25,11 +25,7 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-<<<<<<< HEAD
   orders: [Order.schema]
-=======
-  post: [Post.schema]
->>>>>>> c6e39035c7e6626dfd336bdcabdd6e8f63aead13
 });
 
 // // set up pre-save middleware to create password
