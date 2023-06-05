@@ -45,10 +45,10 @@ const DashboardCard = (item) => {
     if (!itemInCart) {
       dispatch({
         type: ADD_TO_CART,
-        product: { item }
+        product: { ...item }
       });
-      console.log(item);
-      idbPromise('cart', 'put', { item });
+      console.log(itemInCart);
+      idbPromise('cart', 'put', { ...item });
     }
   }
   return (
