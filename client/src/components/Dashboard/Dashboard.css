@@ -20,14 +20,11 @@
   background-color: bisque;
   font-size: larger;
   font-weight: bold;
- 
-
 }
 .categoryList .category {
   padding: 5px 20px;
   border-radius: 10px;
   transition: 0.2s ease-in-out;
- 
 }
 
 .dashboardCard {
@@ -70,6 +67,7 @@
   width: 70%;
 }
 .dashboardCard .bottomRow {
+  display: flex;
   justify-content: space-between;
 }
 .dashboardCard .bottomRow a {
@@ -97,7 +95,7 @@
   background-color: white;
   border: solid;
   border-color: rgb(0, 119, 255);
-  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
 }
 .categoryList .category:hover {
@@ -105,14 +103,9 @@
   color: rgb(210, 134, 41);
   cursor: pointer;
   transition: 0.5s;
-   box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
-  
 }
-
-
-
-
 
 .dashboardCard:hover {
   transition: 1s linear;
@@ -132,9 +125,45 @@ font-size: medium;
 }
 
 } */
+@media only screen and (max-width: 540px)
+ {
+  .categoryList {
+    font-size: medium;
+    gap: 10px;
+  }
+  .categoryList .category {
+    padding: 0;
+  }
 
-@media only screen and (max-width: 540px){
-  .category{
-    padding: 50px;
+  .dashboardCard {
+    width: 80vw;
+  }
+  .productsContainer{
+    height: 75vh;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .categoryList {
+    font-size: smaller;
+    gap: 1px;
+  }
+  .bottomRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .dashboardCard .bottomRow a{
+    width: auto;
+  }
+  .dashboardCard .bottomRow p{
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 340px) {
+  .categoryList .category {
+    font-size: 12px;
   }
 }

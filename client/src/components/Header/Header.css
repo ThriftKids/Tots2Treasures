@@ -39,6 +39,6 @@ a.headerLoginButton{
   padding: 0;
 }
 }
-@media only screen and (max-width: 540px){
-  
+@media only screen and (max-width: 380px){
+a.headerLoginButton{font-size:12px;}
 }
