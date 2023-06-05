@@ -10,7 +10,7 @@ const DashboardCard = (props) => {
         <h2>{props.title}</h2>
         <p>${props.price}</p>
         </div>
-        <div className='row bottomRow'>
+        <div className='bottomRow'>
             <p>{props.desc}</p>
             <a href={props.link}>View more</a>
             <button>+ Add To Cart</button>
