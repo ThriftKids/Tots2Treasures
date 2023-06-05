@@ -1,6 +1,7 @@
 .cardContainer {
+  align-items: center;
   gap: 10px;
-  padding: 20px;
+  padding: 10px;
   height: 70vh;
   overflow-y: scroll;
 }
@@ -11,11 +12,12 @@
   background-color: bisque;
 }
 .cartCard {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: white;
   padding: 0 0 0 10px;
-  width: 35vw;
+  width: 90%;
   border-radius: 10px;
 }
 
@@ -58,18 +60,24 @@
   flex-direction: column;
   transform: scale(1);
   z-index: 1000;
- 
+}
+
+.titleAndPrice {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 10px 0px;
 }
 
 .cartContent {
-    background-color: rgb(191, 238, 238);
-    border-radius: 10px;
-  
-    transform: translateX(-1500px);
-    animation: roadRunnerIn 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-  
-   
-  }
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(191, 238, 238);
+  border-radius: 10px;
+  transform: translateX(-1500px);
+  animation: roadRunnerIn 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
 
 @keyframes roadRunnerIn {
   0% {
@@ -82,7 +90,6 @@
     transform: translateX(0px) skewX(0deg) scaleX(1);
   }
 }
-
 
 .closeCartButton {
   font-size: large;
@@ -126,4 +133,32 @@
   color: rgb(4, 208, 248);
   box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
+}
+
+@media only screen and (max-width: 470px) {
+  .cartCard {
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .cartCard i {
+    margin-top: 10px;
+    border-radius: 0px 0px 10px 10px;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+  }
+  .titleAndPrice {
+    flex-direction: column;
+  }
+  .cartCard h3 {
+    font-size: medium;
+  }
+  .cartCard {
+    font-size: medium;
+  }
+  .shoppingCartTitle{
+    font-size: medium;
+  }
 }
