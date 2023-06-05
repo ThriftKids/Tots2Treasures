@@ -72,6 +72,9 @@ const resolvers = {
       });
 
       return { session: session.id };
+    },
+    tag: async () => {
+      return await Tag.find();
     }
   },
   Mutation: {
