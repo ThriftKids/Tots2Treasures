@@ -23,7 +23,7 @@ const DashboardCard = (props) => {
         </div>
           <div class="viewMoreDashboard" onClick={handleViewMore}>View more</div>
       </div>
-      <DashboardModal categories={['Toys','Kitchen','Clothing']} show={show} onClose={()=>setShow(false)} {...props}/>
+      <DashboardModal categories={['Toys','Kitchen','Clothing','Outdoor','Electronics']} show={show} onClose={()=>setShow(false)} {...props}/>
     </>
       
   
