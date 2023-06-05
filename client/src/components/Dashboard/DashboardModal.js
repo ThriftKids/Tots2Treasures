@@ -14,8 +14,12 @@ const DashboardModal = (props) => {
                 return <p>{element}</p>
             })}
           </div>
+          <div className="modalHeader">
           <h2>{props.title}</h2>
+          <p>${props.price}</p>
+          </div>
           <p>{props.desc}</p>
+          <div className="modalCartButton">+ Add To Cart</div>
         </div>
       </div>
     </div>
