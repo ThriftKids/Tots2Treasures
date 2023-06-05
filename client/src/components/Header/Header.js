@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header>
       <div className="header">
-        <h1>Tots2Treasure</h1>
+        <h1>Tots2Treasures</h1>
 
         <ul className="authButtons">
         <Nav />

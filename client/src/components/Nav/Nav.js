@@ -22,8 +22,8 @@ function Nav() {
           </a>
         </li>
         <li>
-          <a href="/cart" className="navLink">
-            Cart
+          <a href="/cart" className="cartLogo navLink">
+          <i class="fa-solid fa-cart-shopping fa-xl fa-10x "></i>
           </a>
         </li>
       </ul>

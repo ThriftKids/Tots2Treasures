@@ -13,6 +13,7 @@ const DashboardCard = (props) => {
         <div className='row bottomRow'>
             <p>{props.desc}</p>
             <a href={props.link}>View more</a>
+            <button>+ Add To Cart</button>
         </div>
     </div>
   )
