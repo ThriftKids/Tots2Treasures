@@ -1,11 +1,5 @@
 import React, { useState } from "react";
 import "./SignupForm.css";
-
-import { createUser } from '../../utils/API';
-
-import Auth from "../../utils/auth.js"
-
-
 const SignupForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,63 +17,54 @@ const SignupForm = () => {
     setConfirmPassword(e.target.value);
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    // check if form has everything (as per react-bootstrap docs)
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
-    try {
-      const response = await createUser({ email: email, password: password });
-      console.log("this is the response",response)
-      if (!response.ok) {
-        throw new Error("something went wrong!");
-      }
-
-      const { token, user } = await response.json();
-      console.log(user);
-      Auth.login(token);
-    } catch (err) {
-      console.error(err);
-    }
-
-    setEmail("")
-    setPassword("")
-    setConfirmPassword("")
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // signup logic here
+    console.log("Signup form submitted");
+    console.log("Email:", email);
+    console.log("Password:", password);
+    console.log("Confirm Password:", confirmPassword);
   };
 
   return (
     <div className="signupContainer">
       <form className="signupForm" onSubmit={handleSubmit}>
-        <p>Create Accout</p>
+        <div className="centerContent">
+          <p>Create Account</p>
+        </div>
         <label>
-          Email:
-          <input type="email" value={email} onChange={handleEmailChange} />
+          <input
+          className="authInputField"
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={handleEmailChange}
+          />
         </label>
 
         <label>
-          Password:
           <input
+          className="authInputField"
             type="password"
+            placeholder="Password"
             value={password}
             onChange={handlePasswordChange}
           />
         </label>
 
         <label>
-          Confirm Password:
           <input
+          className="authInputField"
             type="password"
+            placeholder="Confirm Password"
             value={confirmPassword}
             onChange={handleConfirmPasswordChange}
           />
         </label>
-
-        <button type="submit">Sign Up</button>
+        <div className="centerContent">
+          <button className="loginButton" type="submit">Sign Up</button>
+          <p>Have an account? <a href="/login">Login</a></p>
+        </div>
       </form>
     </div>
   );

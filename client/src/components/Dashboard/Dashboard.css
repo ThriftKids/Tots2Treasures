@@ -4,29 +4,32 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 20px;
+  height: 71vh;
+  overflow-y: scroll;
+  padding-top: 20px;
 }
 
-.categoryList{
-    text-transform: capitalize;
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-    margin:0 0 15px 0;
-    padding: 25px;
-    background-color: bisque;
-    font-size: larger;
-    font-weight: bold;
+.categoryList {
+  border-top: 1px solid black;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0 0 15px 0;
+  padding: 10px;
+  background-color: bisque;
+  font-size: larger;
+  font-weight: bold;
 }
-.categoryList .category{
-    padding: 5px 20px;
-    border-radius: 10px;
-    transition: 0.2s ease-in-out;
+.categoryList .category {
+  padding: 5px 20px;
+  border-radius: 10px;
+  transition: 0.2s ease-in-out;
 }
-
 
 .dashboardCard {
   background: rgb(255, 255, 255);
-    transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 1) 0%,
@@ -34,6 +37,7 @@
   );
   padding: 10px;
   width: 500px;
+  height: fit-content;
   border-radius: 18px;
   transition: 1s;
 }
@@ -63,6 +67,7 @@
   width: 70%;
 }
 .dashboardCard .bottomRow {
+  display: flex;
   justify-content: space-between;
 }
 .dashboardCard .bottomRow a {
@@ -72,14 +77,34 @@
 .dashboardCard .bottomRow p {
   width: 70%;
 }
+.dashboardCard .bottomRow button {
+  color: white;
+  background-color: rgb(0, 119, 255);
+  margin-left: 15px;
+  border-radius: 10px;
+  border-style: none;
+  width: 130px;
+  height: 30px;
+  font-weight: bold;
+  transition: all 0.5s ease-in-out;
+}
 
 /* hovers */
-
-.categoryList .category:hover{
-    background-color: rgba(179, 242, 255, 1);
-    color: rgb(210, 134, 41);
-    cursor: pointer;
-    transition: 0.5s;
+.dashboardCard .bottomRow button:hover {
+  color: rgb(0, 119, 255);
+  background-color: white;
+  border: solid;
+  border-color: rgb(0, 119, 255);
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+.categoryList .category:hover {
+  background-color: rgba(179, 242, 255, 1);
+  color: rgb(210, 134, 41);
+  cursor: pointer;
+  transition: 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
 }
 
 .dashboardCard:hover {
@@ -90,4 +115,55 @@
     rgba(255, 255, 255, 1) 100%
   );
   transform: translateY(-10px);
+  /* transform: translateY(-2px); */
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 1px 5px rgba(0, 0, 0, 0.22);
+}
+
+/* @media only screen and (max-width: 584px){
+.categoryList{
+font-size: medium;
+}
+
+} */
+@media only screen and (max-width: 540px)
+ {
+  .categoryList {
+    font-size: medium;
+    gap: 10px;
+  }
+  .categoryList .category {
+    padding: 0;
+  }
+
+  .dashboardCard {
+    width: 80vw;
+  }
+  .productsContainer{
+    height: 75vh;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .categoryList {
+    font-size: smaller;
+    gap: 1px;
+  }
+  .bottomRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .dashboardCard .bottomRow a{
+    width: auto;
+  }
+  .dashboardCard .bottomRow p{
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 340px) {
+  .categoryList .category {
+    font-size: 12px;
+  }
 }
