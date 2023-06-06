@@ -17,9 +17,13 @@ const DashboardCard = (props) => {
           <h2>{props.title}</h2>
           <p>${props.price}</p>
         </div>
+
         <div className="row bottomRow">
           <p>{props.desc}</p>
           <button>+ Add To Cart</button>
+
+     
+
         </div>
           <div class="viewMoreDashboard" onClick={handleViewMore}>View more</div>
       </div>

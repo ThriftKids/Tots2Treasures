@@ -46,6 +46,7 @@ const typeDefs = gql`
     user: User
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
+    tag: Tag 
   }
 
   type Mutation {
@@ -58,3 +59,4 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
+

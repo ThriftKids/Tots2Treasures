@@ -1,6 +1,8 @@
+
 import React, { useEffect } from 'react'
 import './Cart.css'
 import CartCard from './Card'
+
 import one from "../images/one.jpg";
 import testImage from "../images/testImage.jpg";
 import { loadStripe } from '@stripe/stripe-js';
@@ -9,6 +11,8 @@ import { useStoreContext } from '../../utils/GlobalState';
 import { QUERY_CHECKOUT } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import { ADD_MULTIPLE_TO_CART } from '../../utils/actions';
+
+
 
 const stripePromise = loadStripe('pk_test_51NDyqbLqFdFAiVSCxI8bLlgSQlitxKVUwsigIH88RBslnH6uOD3Xbngk6xeK2F9ZD7kW4KSJKplWZaeLlLeesOBt00F9uUclmB');
 
@@ -55,18 +59,33 @@ const Cart = () => {
     });
   }
 
+
   return (
-    <div>
+    <div className={`modal`} onClick={props.onClose}>
+      <div className={`cartContent`} onClick={(e) => e.stopPropagation()}>
+        <div className="closeCartButtonContainer">
+        <button onClick={props.onClose} className="closeCartButton">
+        <i class="fa-solid fa-square-xmark fa-xl"></i>
+        </button>
+        </div>
         <h2 className="shoppingCartTitle">Your Shopping Cart</h2>
+
+
         <div className='column cardContainer'>
             <CartCard title="Title 1" price="$100" img={one} />
             <CartCard title="Title 1" price="$100" img={testImage} />
             <CartCard title="Title 1" price="$100" img={one} />
 
             <button onClick={submitCheckout}>Checkout</button>
-        </div>
-    </div>
-  )
-}
 
-export default Cart
+        </div>
+          <div className="cartFooterContainer">
+            <p>Total: $300</p>
+            <button className="purchaseCartButton">Purchase</button>
+          </div>
+      </div>
+    </div>
+  );
+};
+
+export default Cart;
