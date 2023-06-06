@@ -1,0 +1,60 @@
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  background-color: bisque;
+  align-items: center;
+}
+
+.loginForm {
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  padding: 3% 3% 4% 2%;
+  margin: 9% 0 8% 0;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+  background-color: rgb(191, 238, 238);
+  gap: 15px;
+}
+
+.centerContent {
+  display: flex;
+  justify-content: center;
+}
+
+.centerContent > p {
+  font-size: larger;
+  font-weight: 600;
+}
+
+.centerContent > button {
+  padding: 2% 19%;
+  font-size: large;
+  border: none;
+  border-radius: 7px;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.centerContent > button:hover {
+  background-color: bisque;
+  color: rgb(4, 208, 248);
+}
+
+.authInputField:focus,
+.authInputField[type="text"]:focus {
+  background-color: bisque;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+}
+
+.authInputField {
+    border: none;
+    border-radius: 5px;
+    padding: 5%;
+    width: 100%;
+    height: 20px;
+  }
+  

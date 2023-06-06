@@ -1,0 +1,36 @@
+.purchasesContainer{
+    margin-top: 0px;
+}
+
+.purchaseHistoryTitle{
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+    background-color: bisque;
+}
+
+.historyContainer{
+    gap: 20px;
+    padding: 20px;
+}
+
+.purchaseCard{
+    background-color: white;
+    height: 20vh;
+    padding: 10px;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+.imgAndName{
+    gap: 20px;
+}
+.imgAndName .content{
+    gap: 15px;
+}
+
+.purchaseCard img{
+    object-fit: cover;
+    width: 200px;
+    border: 18px;
+}

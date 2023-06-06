@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-// const Order = require('./Order');
+const Order = require('./Order');
 
 const productSchema = new Schema({
   name: {

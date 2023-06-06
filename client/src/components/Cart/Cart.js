@@ -19,6 +19,7 @@ const Cart = () => {
   // We check to see if there is a data object that exists, if so this means that a checkout session was returned from the backend
   // Then we should redirect to the checkout with a reference to our session id
   useEffect(() => {
+    console.log(data);
     if (data) {
       stripePromise.then((res) => {
         res.redirectToCheckout({ sessionId: data.checkout.session });
@@ -32,7 +33,6 @@ const Cart = () => {
     async function getCart() {
       const cart = await idbPromise('cart', 'get');
       dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
-      console.log(cart);
     }
 
     if (!state.cart.length) {
@@ -63,10 +63,9 @@ const Cart = () => {
             <CartCard title="Title 1" price="$100" img={one} />
             {
               state.cart.map((item) => (
-                <CartCard key={item.productId} title={item.title} price={item.price} img={one} />
+                <CartCard key={item.productId} title={item.title} price={item.price} img={one}/>
               ))
             }
-
             <button onClick={submitCheckout}>Checkout</button>
         </div>
     </div>

@@ -16,21 +16,12 @@ const Dashboard = () => {
           <li><p className='category'>clothing</p></li>  
         </ul>
         <div className='productsContainer'>
-<<<<<<< HEAD
-            <DashboardCard title= "Product one" Tag="toy" price="100" desc="lorem ipsum somthing somtething bigger and longer" img={one} link="/"/>
-            <DashboardCard title= "Product two" Tag="clothing kitchen" price="80" desc="lorem ipsum somthing somtething bigger and longer" img={testImage} link="/"/>
+            <DashboardCard title= "Added" Tag="toy" price="100" desc="lorem ipsum somthing somtething bigger and longer" img={one} link="/" productId="99"/>
+            <DashboardCard title= "Added 2" Tag="clothing kitchen" price="80" desc="lorem ipsum somthing somtething bigger and longer" img={testImage} link="/" productId="103"/>
+            <DashboardCard title= "Product three" Tag="outdoor electronics" price="70" desc="lorem ipsum somthing somtething bigger and longer" img={testImage} link="/" productId="432"/>
             <DashboardCard title= "Product three" Tag="outdoor electronics" price="70" desc="lorem ipsum somthing somtething bigger and longer" img={testImage} link="/"/>
             <DashboardCard title= "Product three" Tag="outdoor electronics" price="70" desc="lorem ipsum somthing somtething bigger and longer" img={testImage} link="/"/>
             <DashboardCard title= "Product three" Tag="outdoor electronics" price="70" desc="lorem ipsum somthing somtething bigger and longer" img={testImage} link="/"/>
-            <DashboardCard title= "Product three" Tag="outdoor electronics" price="70" desc="lorem ipsum somthing somtething bigger and longer" img={testImage} link="/"/>
-=======
-            <DashboardCard title= "Product one" category="toy" price="100" desc="lorem ipsum somthing somtething bigger and longer" img={one} link="/" productId="2"/>
-            <DashboardCard title= "Product two" category="clothing kitchen" price="80" desc="lorem ipsum somthing somtething bigger and longer" img={testImage} link="/" productId='3'/>
-            <DashboardCard title= "Product three" category="outdoor electronics" price="70" desc="lorem ipsum somthing somtething bigger and longer" img={testImage} link="/"/>
-            <DashboardCard title= "Product three" category="outdoor electronics" price="70" desc="lorem ipsum somthing somtething bigger and longer" img={testImage} link="/"/>
-            <DashboardCard title= "Product three" category="outdoor electronics" price="70" desc="lorem ipsum somthing somtething bigger and longer" img={testImage} link="/"/>
-            <DashboardCard title= "Product three" category="outdoor electronics" price="70" desc="lorem ipsum somthing somtething bigger and longer" img={testImage} link="/"/>
->>>>>>> b03a284491a26f97d3070ee1ed3aaf86978ec40f
         </div>
     </div>
   )
