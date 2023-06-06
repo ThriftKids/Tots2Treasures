@@ -1,49 +1,63 @@
 import React, { useState } from "react";
+import { useMutation } from '@apollo/client';
 import "./LoginForm.css";
+import { LOGIN } from '../../utils/mutations';
+import Auth from '../../utils/auth';
 
-const LoginForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const LoginForm = (props) => {
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [login, { error }] = useMutation(LOGIN);
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+    try {
+      const mutationResponse = await login({
+        variables: { email: formState.email, password: formState.password },
+      });
+      const token = mutationResponse.data.login.token;
+      Auth.login(token);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // login logic here
-    console.log("Login form submitted");
-    console.log("Email:", email);
-    console.log("Password:", password);
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
   };
 
   return (
     <div className="loginContainer">
-      <form className="loginForm" onSubmit={handleSubmit}>
+      <form className="loginForm" onSubmit={handleFormSubmit}>
         <div className="centerContent">
           <p>Sign In</p>
         </div>
         <label>
           <input className="authInputField"
             type="email"
+            name="email"
             placeholder="Email"
-            value={email}
-            onChange={handleEmailChange}
+            onChange={handleChange}
           />
         </label>
 
         <label>
           <input className="authInputField"
             type="password"
+            name="password"
             placeholder="Password"
-            value={password}
-            onChange={handlePasswordChange}
+            onChange={handleChange}
           />
         </label>
+          {error ? (
+            <div>
+              <p className="error-text">The provided credentials are incorrect</p>
+            </div>
+          ) : null}
         <div className="centerContent">
           <button className="loginButton" type="submit">Login</button>
         </div>

@@ -103,8 +103,9 @@ const resolvers = {
       return await Product.findByIdAndDelete(_id);
     },
     login: async (parent, { email, password }) => {
+      console.log(email, password);
       const user = await User.findOne({ email });
-
+      console.log(user);
       if (!user) {
         throw new AuthenticationError('Incorrect credentials');
       }
