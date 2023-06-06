@@ -6,7 +6,7 @@ import { idbPromise } from "../../utils/helpers";
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
 
-const DashboardCard = (item) => {
+const DashboardCard = (item, props) => {
   const [state, dispatch] = useStoreContext();
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
@@ -60,10 +60,10 @@ const DashboardCard = (item) => {
         <h2>{name}</h2>
         <p>${price}</p>
         </div>
-        <div className='row bottomRow'>
-            <p>{desc}</p>
-            <a href={item.link}>View more</a>
-            <button onClick={addToCart}>+ Add To Cart</button>
+        <div className='bottomRow'>
+            <p>{props.desc}</p>
+            <a href={props.link}>View more</a>
+            <button>+ Add To Cart</button>
         </div>
     </div>
   )

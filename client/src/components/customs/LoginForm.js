@@ -33,7 +33,7 @@ const LoginForm = (props) => {
     <div className="loginContainer">
       <form className="loginForm" onSubmit={handleFormSubmit}>
         <div className="centerContent">
-          <p>Sign In</p>
+          <p>Login</p>
         </div>
         <label>
           <input className="authInputField"
@@ -59,6 +59,7 @@ const LoginForm = (props) => {
           ) : null}
         <div className="centerContent">
           <button className="loginButton" type="submit">Login</button>
+          <p>Don't have an account? <a href="/signup">Signup</a></p>
         </div>
       </form>
     </div>

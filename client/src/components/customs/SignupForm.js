@@ -87,6 +87,7 @@ const SignupForm = () => {
         </label>
         <div className="centerContent">
           <button className="loginButton" type="submit">Sign Up</button>
+          <p>Have an account? <a href="/login">Login</a></p>
         </div>
       </form>
     </div>

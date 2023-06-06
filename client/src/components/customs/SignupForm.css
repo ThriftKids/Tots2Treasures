@@ -6,9 +6,10 @@
 }
 
 .signupForm {
-  width:10%;
+  width:500px;
   display: flex;
   flex-direction: column;
+ 
   padding: 3% 3% 4% 2%;
   margin: 9% 0 8% 0;
   border-radius: 15px;
@@ -19,25 +20,29 @@
 .centerContent{
   display: flex;
   justify-content: center;
+  gap: 15px;
 }
 
 .centerContent>p{
+  align-self: center;
   font-size: larger;
   font-weight:600;
 }
 
 .centerContent>button{
+  align-self: center;
   padding: 2% 19%;
   font-size: large;
   border: none;
   border-radius: 7px;
-  transition: background-color 0.5s, color 0.5s;
-  
+  transition: all 0.5s ease-in-out;
   
 }
 .centerContent>button:hover{
   background-color: bisque;
   color: rgb(4, 208, 248); 
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
 }
 
 /* Applying background color and border to focused input fields */
@@ -54,7 +59,7 @@
 .authInputField{
   border: none;
   border-radius: 5px;
-  padding: 5%;
+  padding: 5px;
   width: 100%;
-  height: 20px;
+  height: 30px;
 }

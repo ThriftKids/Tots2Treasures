@@ -23,3 +23,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: rgb(117, 219, 245) #fff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #d6d1d1;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: rgb(117, 219, 245);
+    border-radius: 10px;
+    border: 3px solid #fff;
+  }
