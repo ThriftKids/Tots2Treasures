@@ -20,7 +20,6 @@ const SignupForm = () => {
     });
     const token = mutationResponse.data.addUser.token;
     Auth.login(token);
-    console.log(token);
   };
 
   const handleChange = (event) => {
