@@ -11,8 +11,6 @@ const Header = () => {
       <div className="header">
         <div className="tabContainer">
       <img className="t2tLogo" src={logoImg} alt="logo"></img>
-     
-  
         <Nav />
       </div>
 
@@ -22,7 +20,7 @@ const Header = () => {
             <i class="fa-solid fa-cart-shopping fa-xl fa-10x "></i>
           </p>
         </li>
-        {/* <Cart onClose={() => setShow(false)} show={show} /> */}
+        <Cart onClose={() => setShow(false)} show={show} />
           <li>
             <a href='/login'className="headerLoginButton">Login</a>
           </li>
