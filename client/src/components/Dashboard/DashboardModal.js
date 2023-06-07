@@ -9,8 +9,8 @@ const DashboardModal = (props) => {
       <div className="dashboardModal-content">
         <div className="dashboardModal-body">
           <img src={props.img} alt={props.title} />
-          <div className="modal-categories">
-            {props.categories.map((element)=>{
+          <div className="modal-tags">
+            {props.tags.map((element)=>{
                 return <p>{element}</p>
             })}
           </div>

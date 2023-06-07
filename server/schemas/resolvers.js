@@ -6,10 +6,10 @@ const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY);
 const resolvers = {
   Query: {
     products: async () => {
-      return await Product.findAll().populate('category');
+      return await Product.findAll().populate('tag');
     },
     product: async (parent, { _id }) => {
-      return await Product.findById(_id).populate('category');
+      return await Product.findById(_id).populate('tag');
     },
     user: async (parent, args, context) => {
       if (context.user) {
@@ -73,7 +73,16 @@ const resolvers = {
 
       return { session: session.id };
     },
-    tag: async () => {
+    sortedProduct: async (parent, { tag }) => {
+      const params = {};
+
+      if (tag) {
+        params.tag = tag;
+      }
+
+      return await Product.find(params).populate('tag');
+    },
+    tags: async () => {
       return await Tag.find();
     }
   },
@@ -85,7 +94,6 @@ const resolvers = {
       return { token, user };
     },
     addOrder: async (parent, { products }, context) => {
-      console.log(context);
       if (context.user) {
         const order = new Order({ products });
 
