@@ -23,6 +23,15 @@ export const QUERY_CHECKOUT = gql`
   }
 `;
 
+export const QUERY_TAGS = gql`
+  {
+    tags {
+      _id
+      name
+    }
+  }
+`;
+
 export const QUERY_USER = gql`
   {
     user {

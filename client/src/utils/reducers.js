@@ -4,7 +4,8 @@ import {
   ADD_TO_CART,
   REMOVE_FROM_CART,
   ADD_MULTIPLE_TO_CART,
-  CLEAR_CART
+  UPDATE_CURRENT_TAG,
+  UPDATE_TAGS
 } from "./actions";
 
 export const reducer = (state, action) => {
@@ -38,13 +39,18 @@ export const reducer = (state, action) => {
         cartOpen: newState.length > 0,
         cart: newState
       };
-
-    case CLEAR_CART:
+    
+    case UPDATE_TAGS:
       return {
         ...state,
-        cartOpen: false,
-        cart: []
+        tags: [...action.tags],
       };
+
+    case UPDATE_CURRENT_TAG:
+      return {
+        ...state,
+        currentT: action.currentTag
+      }
 
     default:
       return state;

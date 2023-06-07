@@ -9,7 +9,7 @@
   padding-top: 20px;
 }
 
-.categoryList {
+.tagList {
 
 
   border-top: 1px solid black;
@@ -27,7 +27,7 @@
   font-size: larger;
   font-weight: bold;
 }
-.categoryList .category {
+.tagList .tag {
   padding: 5px 20px;
   border-radius: 10px;
   transition: 0.2s ease-in-out;
@@ -110,7 +110,7 @@
   transform: translate3d(0, 2px, 0);
 
 }
-.categoryList .category:hover {
+.tagList .tag:hover {
   background-color: rgba(179, 242, 255, 1);
   color: rgb(210, 134, 41);
   cursor: pointer;
@@ -135,18 +135,18 @@
 }
 
 /* @media only screen and (max-width: 584px){
-.categoryList{
+.tagList{
 font-size: medium;
 }
 
 } */
 @media only screen and (max-width: 540px)
  {
-  .categoryList {
+  .tagList {
     font-size: medium;
     gap: 10px;
   }
-  .categoryList .category {
+  .tagList .tag {
     padding: 0;
   }
 
@@ -159,7 +159,7 @@ font-size: medium;
 }
 
 @media only screen and (max-width: 380px) {
-  .categoryList {
+  .tagList {
     font-size: smaller;
     gap: 1px;
   }
@@ -178,7 +178,7 @@ font-size: medium;
   }
 }
 @media only screen and (max-width: 340px) {
-  .categoryList .category {
+  .tagList .tag {
     font-size: 12px;
   }
 }
@@ -265,7 +265,7 @@ font-size: medium;
   color: black;
 }
 
-.modal-categories{
+.modal-tags{
   display: flex;
   justify-content: space-around;
   margin-top: 10px;
@@ -275,13 +275,13 @@ font-size: medium;
   padding-bottom: 10px;
 }
 
-.modal-categories p{
+.modal-tags p{
   padding: 5px 10px;
   background-color: bisque;
   border-radius: 10px;
 }
 
-.modal-categories p:hover{
+.modal-tags p:hover{
   box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.54);
 
 }

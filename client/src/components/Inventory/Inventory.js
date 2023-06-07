@@ -18,8 +18,8 @@ const CheckboxGroup = () => {
   };
 
   return (
-    <div className="categoriesCheckbox">
-      <p className="categoryTitle">Pick a category for your item:</p>
+    <div className="tagsCheckbox">
+      <p className="tagTitle">Pick a tag for your item:</p>
         <div className="checkboxesList">
 
       <label className="checkboxLabel flipBox">

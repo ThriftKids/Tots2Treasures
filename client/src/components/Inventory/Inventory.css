@@ -75,7 +75,7 @@
   transform: translate3d(0, 2px, 0);
 }
 
-.categoriesCheckbox{
+.tagsCheckbox{
   display: flex;
   align-self: center;
 }
@@ -90,7 +90,7 @@
   font-size:large;
   font-weight: 400;
 }
-.categoryTitle{
+.tagTitle{
 
   margin-right: 20px;
 }
