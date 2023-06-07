@@ -12,11 +12,16 @@ import { QUERY_CHECKOUT } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import { ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 
-
+// const Cart = (props) => {
+//   if (!props.show) {
+//     return null;
+//   }
 
 const stripePromise = loadStripe('pk_test_51NDyqbLqFdFAiVSCxI8bLlgSQlitxKVUwsigIH88RBslnH6uOD3Xbngk6xeK2F9ZD7kW4KSJKplWZaeLlLeesOBt00F9uUclmB');
 
 const Cart = () => {
+ 
+
   const [state, dispatch] = useStoreContext();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
@@ -58,13 +63,15 @@ const Cart = () => {
       variables: { products: productIds },
     });
   }
-
+  // if (!props.show) {
+  //   return null;
+  //  }
 
   return (
-    <div className={`modal`} onClick={props.onClose}>
-      <div className={`cartContent`} onClick={(e) => e.stopPropagation()}>
+    <div>
+      <div >
         <div className="closeCartButtonContainer">
-        <button onClick={props.onClose} className="closeCartButton">
+        <button >
         <i class="fa-solid fa-square-xmark fa-xl"></i>
         </button>
         </div>
