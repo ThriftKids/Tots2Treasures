@@ -12,17 +12,11 @@ import { UPDATE_PRODUCTS } from '../../utils/actions';
 const DashboardCard = (props) => {
   const [show, setShow] = useState(false);
   const [state, dispatch] = useStoreContext();
-//function to add card to cart , but hardcoded cards only
-  const handleAddToCart= ()=>{
-   state.cart.push({...props})
-  }
 
   const handleViewMore = () => {
     setShow(true);
-
   };
 
-  const [state, dispatch] = useStoreContext();
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
   useEffect(() => {
