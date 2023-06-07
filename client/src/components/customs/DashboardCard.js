@@ -75,13 +75,11 @@ const DashboardCard = (props) => {
 
         <div className="rowForButtons">
           
-        <div class="viewMoreDashboard" onClick={handleViewMore}>
+        <div className="viewMoreDashboard" onClick={handleViewMore}>
           View more
         </div>
           <button className="addToCartButton" onClick={addToCart}>+ Add To Cart</button>
         </div>
-
-          
 
       </div>
       <DashboardModal tags={['Toys','Kitchen','Clothing','Outdoor','Electronics']} show={show} onClose={()=>setShow(false)} {...props}/>

@@ -61,6 +61,15 @@ const Cart = (props) => {
     return null;
    }
 
+  function calculateTotal() {
+    let sum = 0;
+    state.cart.forEach((item) => {
+      console.log(item);
+      sum += Number(item.price);
+    });
+    return sum.toFixed(2);
+  }
+
   return (
     <div className={`modal`} onClick={props.onClose}>
       <div className={`cartContent`} onClick={(e) => e.stopPropagation()}>
@@ -84,7 +93,7 @@ const Cart = (props) => {
             ))}
         </div>
         <div className="cartFooterContainer">
-          <p>Total: $100</p>
+          <p>Total: ${calculateTotal()}</p>
           <button className="purchaseCartButton" onClick={submitCheckout}>Purchase</button>
         </div>
       </div>

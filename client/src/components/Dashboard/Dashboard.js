@@ -55,7 +55,7 @@ const Dashboard = () => {
           <li><p className='tag' id="clothing" onClick={handleClick}>clothing</p></li>  
         </ul>
 
-        {/* Tag sorting code */}
+        {/* Tag sorting code
         <div className='productsContainer'>            
             {state.currentTag ? (
             state.products.map((card) => {
@@ -87,7 +87,7 @@ const Dashboard = () => {
               }
             ))
             }
-      </div>
+      </div> */}
       <div className='productsContainer'>
             <DashboardCard title= "Product one" tag="toy" price="100" desc="lorem ipsum somthing somtething bigger and longer" img={one} link="/" _id="1" key="1"/>
             <DashboardCard title= "Product two" tag="clothing kitchen" price="80" desc="lorem ipsum somthing somtething bigger and longer" img={testImage} link="/" _id="2" key="2"/>
