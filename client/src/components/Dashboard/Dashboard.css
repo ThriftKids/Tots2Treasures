@@ -4,7 +4,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 20px;
-  height: 71vh;
+  height: 70.7vh;
   overflow-y: scroll;
   padding-top: 20px;
 }
@@ -63,10 +63,13 @@
 }
 
 .dashboardCard .topRow {
+  margin-top: 20px;
+  margin-right: 20px;
   justify-content: space-between;
 }
 .dashboardCard .topRow p {
   width: 25%;
+  font-size: 20px;
   text-align: end;
 }
 .dashboardCard .topRow h2 {
@@ -83,7 +86,7 @@
 .dashboardCard .bottomRow p {
   width: 70%;
 }
-.dashboardCard .bottomRow button {
+.addToCartButton{
   color: white;
   background-color: rgb(0, 119, 255);
   margin-left: 15px;
@@ -92,10 +95,13 @@
   width: 130px;
   height: 30px;
   font-weight: bold;
-
-
   transition: all 0.5s ease-in-out;
+}
 
+.rowForButtons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* hovers */
@@ -247,6 +253,7 @@ font-size: medium;
 .dashboardModal-body img{
   align-self: center;
   border-radius: 10px;
+  width: 80%;
 }
 
 .viewMoreDashboard{
