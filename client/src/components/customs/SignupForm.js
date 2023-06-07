@@ -85,8 +85,9 @@ const SignupForm = () => {
             onChange={handleChange}
           />
         </label>
-        <div className="centerContent">
-          <button className="loginButton" type="submit">Sign Up</button>
+        <div className="centerContent1">
+        <p className="bottomP">Have an Account? <a href="/login">Login</a></p>
+          <button className="loginButtonCard" type="submit">Sign Up</button>
         </div>
       </form>
     </div>

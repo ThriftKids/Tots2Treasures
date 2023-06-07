@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from "react";
 import DashboardModal from "../Dashboard/DashboardModal";
 import { useStoreContext } from "../../utils/GlobalState";
+
 import { ADD_TO_CART } from "../../utils/actions";
 import { useQuery } from '@apollo/client';
 import { idbPromise } from "../../utils/helpers";
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
 
+
 const DashboardCard = (props) => {
   const [show, setShow] = useState(false);
+  const [state, dispatch] = useStoreContext();
+//function to add card to cart , but hardcoded cards only
+  const handleAddToCart= ()=>{
+   state.cart.push({...props})
+  }
+
   const handleViewMore = () => {
     setShow(true);
 
@@ -78,7 +86,10 @@ const DashboardCard = (props) => {
         <div className="viewMoreDashboard" onClick={handleViewMore}>
           View more
         </div>
+
+
           <button className="addToCartButton" onClick={addToCart}>+ Add To Cart</button>
+
         </div>
 
       </div>

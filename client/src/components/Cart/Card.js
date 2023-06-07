@@ -14,6 +14,7 @@ const CartCard = ({ img, title, price, desc, product, id }) => {
   idbPromise('cart', 'delete', { ...item });
 };
 
+
   return (
     <div className="cartCard">
       <div className=" titleAndPrice">
@@ -23,8 +24,10 @@ const CartCard = ({ img, title, price, desc, product, id }) => {
           <p>{price}</p>
         </div>
       </div>
+
       <p>{desc}</p>
       <i className="fa-sharp fa-solid fa-trash" onClick={() => removeItem(product)}></i>
+
     </div>
   );
 };

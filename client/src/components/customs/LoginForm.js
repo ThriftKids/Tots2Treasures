@@ -57,8 +57,9 @@ const LoginForm = (props) => {
               <p className="error-text">The provided credentials are incorrect</p>
             </div>
           ) : null}
-        <div className="centerContent">
-          <button className="loginButton" type="submit">Login</button>
+        <div className="centerContent1">
+          <p className="bottomP">Don't have an account? <a href="/signup">Sign up</a></p>
+          <button className="loginButtonCard" type="submit">Login</button>
         </div>
       </form>
     </div>

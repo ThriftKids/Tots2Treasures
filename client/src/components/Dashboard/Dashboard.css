@@ -7,6 +7,18 @@
   height: 70.7vh;
   overflow-y: scroll;
   padding-top: 20px;
+  margin-bottom: 1.1%;
+  animation: blowUpModal .9s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+
+}
+
+@keyframes blowUpModal {
+  0% {
+    transform:scale(0);
+  }
+  100% {
+    transform:scale(1);
+  }
 }
 
 .tagList {
@@ -45,7 +57,7 @@
   width: 500px;
   height: fit-content;
   border-radius: 18px;
-  transition: 1s;
+  /* transition: 5s; */
 }
 
 .dashboardCard .img {
@@ -105,12 +117,12 @@
 }
 
 /* hovers */
-.dashboardCard .bottomRow button:hover {
+.addToCartButton:hover {
   color: rgb(0, 119, 255);
   background-color: white;
-  border: solid;
+  border: 1px solid;
   border-color: rgb(0, 119, 255);
-
+  cursor: pointer;
 
   box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
@@ -129,7 +141,7 @@
 }
 
 .dashboardCard:hover {
-  transition: 1s linear;
+  transition: 0.5s linear;
   background: linear-gradient(
     180deg,
     rgba(179, 242, 255, 1) 0%,
@@ -215,12 +227,18 @@ font-size: medium;
   color: white;
   cursor: pointer;
   border-radius: 10px;
-  transition: 0.2s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .modalCartButton:hover{
+  color: rgb(0, 119, 255);
   background-color: white;
-  color: rgb(0, 119, 255);;
+  border: 1px solid;
+  border-color: rgb(0, 119, 255);
+  cursor: pointer;
+
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
 }
 
 .dashboardModal-content{
@@ -259,17 +277,21 @@ font-size: medium;
 .viewMoreDashboard{
   margin: 10px 0px;
   padding: 5px 15px;
+  font-weight: bold;
   width: fit-content;
-  border-radius: 18px;
-  background-color: blanchedalmond;
+  border-radius: 10px;
+  background-color: bisque;
   color: rgb(0, 119, 255);
-  transition: 0.2s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .viewMoreDashboard:hover{
   cursor: pointer;
-  background-color: white;
+  background-color: rgba(179, 242, 255, 1);
   color: black;
+  border: 1px solid;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
 }
 
 .modal-tags{
