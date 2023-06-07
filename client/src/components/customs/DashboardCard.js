@@ -53,7 +53,6 @@ const DashboardCard = (item) => {
        product: { item }
      });
      // made changes, removed double curly brackets
-     console.log(item);
      idbPromise('cart', 'put', item );
    }
  }

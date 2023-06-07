@@ -73,6 +73,15 @@ const resolvers = {
 
       return { session: session.id };
     },
+    sortedProduct: async (parent, { tag }) => {
+      const params = {};
+
+      if (tag) {
+        params.tag = tag;
+      }
+
+      return await Product.find(params).populate('tag');
+    },
     tags: async () => {
       return await Tag.find();
     }
@@ -85,7 +94,6 @@ const resolvers = {
       return { token, user };
     },
     addOrder: async (parent, { products }, context) => {
-      console.log(context);
       if (context.user) {
         const order = new Order({ products });
 

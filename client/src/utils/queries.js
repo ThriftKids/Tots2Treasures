@@ -32,6 +32,23 @@ export const QUERY_TAGS = gql`
   }
 `;
 
+export const SORTED_PRODUCT = gql`
+  query sortedProduct($name: String) {
+    sortedProduct(name: $name) {
+      products {
+        _id
+        name
+        description
+        image
+        price
+        tag {
+          name
+        }
+      }
+    }
+  }
+`;
+
 export const QUERY_USER = gql`
   {
     user {

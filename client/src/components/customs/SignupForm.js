@@ -10,7 +10,6 @@ const SignupForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
     const mutationResponse = await addUser({
       variables: {
         email: formState.email,

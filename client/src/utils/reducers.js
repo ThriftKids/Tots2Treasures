@@ -49,7 +49,7 @@ export const reducer = (state, action) => {
     case UPDATE_CURRENT_TAG:
       return {
         ...state,
-        currentT: action.currentTag
+        currentTag: action.currentTag
       }
 
     default:
