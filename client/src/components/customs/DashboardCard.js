@@ -7,61 +7,61 @@ import { idbPromise } from "../../utils/helpers";
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
 
-const DashboardCard = (item) => {
-  const [show, setShow] = useState(false)
- const handleViewMore = ()=>{
-  setShow(true)
- }
- const [state, dispatch] = useStoreContext();
+const DashboardCard = (props) => {
+  const [show, setShow] = useState(false);
+  const handleViewMore = () => {
+    setShow(true);
 
- const { loading, data } = useQuery(QUERY_PRODUCTS);
+  };
 
- useEffect(() => {
-   if (data) {
-     dispatch({
-       type: UPDATE_PRODUCTS,
-       products: data.products,
-     });
-     data.products.forEach((product) => {
-       idbPromise('products', 'put', product);
-     });
-   } else if (!loading) {
-     idbPromise('products', 'get').then((products) => {
-       dispatch({
-         type: UPDATE_PRODUCTS,
-         products: products,
-       });
-     });
-   }
- }, [data, loading, dispatch]);
+  const [state, dispatch] = useStoreContext();
+  const { loading, data } = useQuery(QUERY_PRODUCTS);
 
- const {
-   img,
-   title,
-   productId,
-   price,
-   desc
- } = item;
+  useEffect(() => {
+    if (data) {
+      dispatch({
+        type: UPDATE_PRODUCTS,
+        products: data.products,
+      });
+      data.products.forEach((product) => {
+        idbPromise('products', 'put', product);
+      });
+    } else if (!loading) {
+      idbPromise('products', 'get').then((products) => {
+        dispatch({
+          type: UPDATE_PRODUCTS,
+          products: products,
+        });
+      });
+    }
+  }, [data, loading, dispatch]);
 
- const { cart } = state
+  const {
+    img,
+    title,
+    _id,
+    price,
+    desc
+  } = props;
 
- const addToCart = () => {
-   const itemInCart = cart.find((cartItem) => cartItem.productId === productId)
-   if (!itemInCart) {
-     dispatch({
-       type: ADD_TO_CART,
-       product: { item }
-     });
-     // made changes, removed double curly brackets
-     idbPromise('cart', 'put', item );
-   }
- }
- 
+  const { cart } = state
+
+  const addToCart = () => {
+    const itemInCart = cart.find((cartItem) => cartItem._id === _id)
+    if (!itemInCart && props && props._id) {
+      dispatch({
+        type: ADD_TO_CART,
+        product: { ...props }
+      });
+      idbPromise('cart', 'put', {...props} );
+    }
+  }
+
   return (
     <>
       <div className="dashboardCard">
         <div className="img">
-          <img src={img} alt={item.tag.split(" ")[0]} />
+          <img src={img} alt={props.tag.split(" ")[0]} />
         </div>
         <div className="row topRow">
           <h2>{title}</h2>
@@ -72,15 +72,21 @@ const DashboardCard = (item) => {
           <p>{desc}</p>
           <button onClick={addToCart}>+ Add To Cart</button>
 
-     
-
         </div>
-          <div className="viewMoreDashboard" onClick={handleViewMore}>View more</div>
+
+        <div className="rowForButtons">
+          
+        <div class="viewMoreDashboard" onClick={handleViewMore}>
+          View more
+        </div>
+          <button className="addToCartButton" onClick={addToCart}>+ Add To Cart</button>
+        </div>
+
+          
+
       </div>
-      <DashboardModal tags={['Toys','Kitchen','Clothing','Outdoor','Electronics']} show={show} onClose={()=>setShow(false)} {...item}/>
+      <DashboardModal tags={['Toys','Kitchen','Clothing','Outdoor','Electronics']} show={show} onClose={()=>setShow(false)} {...props}/>
     </>
-      
-  
   );
 };
 
