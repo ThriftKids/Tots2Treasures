@@ -17,7 +17,7 @@ const Header = () => {
         <ul className="authButtons">
         <li>
           <p onClick={()=>{setShow(true)}} className="cartLogo navLink">
-            <i class="fa-solid fa-cart-shopping fa-xl fa-10x "></i>
+            <i className="fa-solid fa-cart-shopping fa-xl fa-10x "></i>
           </p>
         </li>
         <Cart onClose={() => setShow(false)} show={show} />
