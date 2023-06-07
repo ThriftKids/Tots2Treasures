@@ -1,29 +1,34 @@
 import React, { useState } from "react";
 import "./SignupForm.css";
+import { useMutation } from "@apollo/client";
+import Auth from '../../utils/auth';
+import { ADD_USER } from '../../utils/mutations';
+
 const SignupForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [addUser] = useMutation(ADD_USER);
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+    const mutationResponse = await addUser({
+      variables: {
+        email: formState.email,
+        password: formState.password,
+        firstName: formState.firstName,
+        lastName: formState.lastName,
+      },
+    });
+    const token = mutationResponse.data.addUser.token;
+    Auth.login(token);
   };
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleConfirmPasswordChange = (e) => {
-    setConfirmPassword(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // signup logic here
-    console.log("Signup form submitted");
-    console.log("Email:", email);
-    console.log("Password:", password);
-    console.log("Confirm Password:", confirmPassword);
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
   };
 
   return (
@@ -35,35 +40,54 @@ const SignupForm = () => {
         <label>
           <input
           className="authInputField"
+            type="firstName"
+            name="firstName"
+            placeholder="First Name"
+            onChange={handleChange}
+          />
+        </label>
+
+        <label>
+          <input
+          className="authInputField"
+            name="lastName"
+            type="lastName"
+            placeholder="Last Name"
+            onChange={handleChange}
+          />
+        </label>
+
+        <label>
+          <input
+          className="authInputField"
+            name="email"
             type="email"
             placeholder="Email"
-            value={email}
-            onChange={handleEmailChange}
+            onChange={handleChange}
           />
         </label>
 
         <label>
           <input
           className="authInputField"
+            name="password"
             type="password"
             placeholder="Password"
-            value={password}
-            onChange={handlePasswordChange}
+            onChange={handleChange}
           />
         </label>
 
         <label>
           <input
           className="authInputField"
+            name="confirmPass"
             type="password"
             placeholder="Confirm Password"
-            value={confirmPassword}
-            onChange={handleConfirmPasswordChange}
+            onChange={handleChange}
           />
         </label>
         <div className="centerContent">
           <button className="loginButton" type="submit">Sign Up</button>
-          <p>Have an account? <a href="/login">Login</a></p>
         </div>
       </form>
     </div>
