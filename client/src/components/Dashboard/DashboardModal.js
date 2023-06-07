@@ -5,9 +5,9 @@ const DashboardModal = (props) => {
     return null;
   }
   return (
-    <div class="dashboardModal" onClick={props.onClose}>
-      <div class="dashboardModal-content">
-        <div class="dashboardModal-body">
+    <div className="dashboardModal" onClick={props.onClose}>
+      <div className="dashboardModal-content">
+        <div className="dashboardModal-body">
           <img src={props.img} alt={props.title} />
           <div className="modal-categories">
             {props.categories.map((element)=>{
