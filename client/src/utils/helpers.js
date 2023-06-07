@@ -11,8 +11,8 @@ export function idbPromise(storeName, method, object) {
     let db, tx, store;
     request.onupgradeneeded = function(e) {
       const db = request.result;
-      db.createObjectStore('products', { keyPath: '_id' });
-      db.createObjectStore('cart', { keyPath: '_id' });
+      db.createObjectStore('products', {keyPath: '_id', autoIncrement: true});
+      db.createObjectStore('cart', {keyPath: '_id', autoIncrement: true});
     };
 
     request.onerror = function(e) {
@@ -30,8 +30,10 @@ export function idbPromise(storeName, method, object) {
 
       switch (method) {
         case 'put':
-          store.put(object);
-          resolve(object);
+          if(object && object._id){
+            store.put(object);
+            resolve(object);
+          }
           break;
         case 'get':
           const all = store.getAll();
@@ -40,7 +42,9 @@ export function idbPromise(storeName, method, object) {
           };
           break;
         case 'delete':
-          store.delete(object._id);
+          if(object && object._id){
+            store.delete(object._id);
+          }
           break;
         default:
           console.log('No valid method');
