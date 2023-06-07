@@ -1,7 +1,7 @@
 .footerContainer{
     display: flex;
     justify-content: center;
-    margin-top:1%;
+    /* margin-top:1%; */
     padding: 1%;
     background-color: rgb(191, 238, 238);
     font-size:x-large;
