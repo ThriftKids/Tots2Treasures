@@ -10,7 +10,6 @@ import { useStoreContext } from '../../utils/GlobalState';
 import { QUERY_CHECKOUT } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import { ADD_MULTIPLE_TO_CART } from '../../utils/actions';
-import { v4 as uuidv4 } from 'uuid';
 
 const stripePromise = loadStripe('pk_test_51NDyqbLqFdFAiVSCxI8bLlgSQlitxKVUwsigIH88RBslnH6uOD3Xbngk6xeK2F9ZD7kW4KSJKplWZaeLlLeesOBt00F9uUclmB');
 
@@ -74,7 +73,7 @@ const Cart = (props) => {
         <div className='column cardContainer'>
             {state.cart.map((product) => (
               <CartCard
-                key={uuidv4()}
+                key={product._id}
                 id={product._id}
                 title={product.title}
                 price={`$${product.price}`}

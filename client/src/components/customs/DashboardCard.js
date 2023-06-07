@@ -70,7 +70,6 @@ const DashboardCard = (props) => {
 
         <div className="row bottomRow">
           <p>{desc}</p>
-          <button onClick={addToCart}>+ Add To Cart</button>
 
         </div>
 
