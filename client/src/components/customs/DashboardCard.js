@@ -22,6 +22,7 @@ const DashboardCard = (props) => {
           <p>{props.desc}</p>
 
         </div>
+
         <div className="rowForButtons">
           
         <div class="viewMoreDashboard" onClick={handleViewMore}>
@@ -29,6 +30,9 @@ const DashboardCard = (props) => {
         </div>
           <button className="addToCartButton">+ Add To Cart</button>
         </div>
+
+          
+
       </div>
       <DashboardModal
         categories={["Toys", "Kitchen", "Clothing", "Outdoor", "Electronics"]}

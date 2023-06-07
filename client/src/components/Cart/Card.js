@@ -11,7 +11,7 @@ const CartCard = (props) => {
         </div>
       </div>
       <p>{props.desc}</p>
-      <i class="fa-sharp fa-solid fa-trash"></i>
+      <i className="fa-sharp fa-solid fa-trash"></i>
     </div>
   );
 };

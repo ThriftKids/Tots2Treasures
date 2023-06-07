@@ -43,8 +43,8 @@ const App = () => {
   return (
     <div>
       <ApolloProvider client={client}>
-        <Header />
-          <StoreProvider>
+        <StoreProvider>
+          <Header />
             <Routes>
               <Route exact path="/" element={<Dashboard />} />
 
