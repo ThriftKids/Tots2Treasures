@@ -16,6 +16,7 @@
 
 .tabContainer {
   display: flex;
+ 
 }
 @media only screen and (max-width: 622px){
   .t2tLogo{
@@ -41,4 +42,10 @@ a.headerLoginButton{
 }
 @media only screen and (max-width: 380px){
 a.headerLoginButton{font-size:12px;}
+/* .t2tLogo{
+  width: 55%;
+} */
+.tabContainer{
+  height: 5px;
+}
 }

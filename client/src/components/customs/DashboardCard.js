@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import DashboardModal from "../Dashboard/DashboardModal";
+import { useStoreContext } from "../../utils/GlobalState";
 
 const DashboardCard = (props) => {
   const [show, setShow] = useState(false);
+  const [state, dispatch] = useStoreContext();
+//function to add card to cart , but hardcoded cards only
+  const handleAddToCart= ()=>{
+   state.cart.push({...props})
+  }
+
   const handleViewMore = () => {
     setShow(true);
   };
@@ -28,7 +35,7 @@ const DashboardCard = (props) => {
         <div class="viewMoreDashboard" onClick={handleViewMore}>
           View more
         </div>
-          <button className="addToCartButton">+ Add To Cart</button>
+          <button className="addToCartButton" onClick={handleAddToCart}>+ Add To Cart</button>
         </div>
 
           

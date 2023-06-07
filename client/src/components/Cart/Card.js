@@ -1,6 +1,16 @@
 import React from "react";
+import { useStoreContext } from "../../utils/GlobalState";
 
 const CartCard = (props) => {
+
+
+  const [state, dispatch] = useStoreContext();
+
+  const handleDelete=()=>{
+    //find the item in the state.cart array
+    //state.cart.pop(`item`)
+  }
+
   return (
     <div className="cartCard">
       <div className=" titleAndPrice">
@@ -11,7 +21,7 @@ const CartCard = (props) => {
         </div>
       </div>
       <p>{props.desc}</p>
-      <i className="fa-sharp fa-solid fa-trash"></i>
+      <i onClick={handleDelete} className="fa-sharp fa-solid fa-trash"></i>
     </div>
   );
 };
