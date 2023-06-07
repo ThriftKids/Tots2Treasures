@@ -31,10 +31,8 @@ export function idbPromise(storeName, method, object) {
 
       switch (method) {
         case 'put':
-          if(object && object._id){
-            store.put(object);
-            resolve(object);
-          }
+          store.put(object);
+          resolve(object);
           break;
         case 'get':
           const all = store.getAll();
@@ -43,9 +41,7 @@ export function idbPromise(storeName, method, object) {
           };
           break;
         case 'delete':
-          if(object && object._id){
-            store.delete(object._id);
-          }
+          store.delete(object.productId);
           break;
         default:
           console.log('No valid method');
