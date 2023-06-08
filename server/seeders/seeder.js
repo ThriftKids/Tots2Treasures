@@ -57,7 +57,7 @@ async function seedDB() {
     {
       name: 'The Great Book',
       description: 'A really great book',
-      image: '/path/to/image',
+      image: '/static/media/one.ee5ade4ea5af4a4d92f8.jpg',
       price: 19.99,
       userId: users[1]._id,
       productId: '1',
@@ -66,7 +66,7 @@ async function seedDB() {
     {
       name: 'Super Cool Gadget',
       description: 'A really cool gadget',
-      image: '/path/to/image',
+      image: '/static/media/testImage.a39c52386fb44f523f98.jpg',
       price: 99.99,
       userId: users[0]._id,
       productId: '2',

@@ -92,7 +92,7 @@ const Cart = (props) => {
           {Auth.loggedIn() ? (
           <button className="purchaseCartButton" onClick={submitCheckout}>Purchase</button>
           ) : (
-            <span>(log in to check out)</span>
+            <span>(Log in to check out)</span>
           )}
         </div>
       </div>
