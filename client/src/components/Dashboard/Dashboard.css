@@ -158,6 +158,23 @@ font-size: medium;
 }
 
 } */
+
+/* .error-toast{
+  background-color: green;
+  color: white;
+}
+.success-toast-progress{
+  background-color: #005500;
+}
+.success-toast{
+  background-color: red;
+  color: white;
+}
+.error-toast-body{
+  background-color: chartreuse;
+} */
+
+
 @media only screen and (max-width: 540px)
  {
   .tagList {
