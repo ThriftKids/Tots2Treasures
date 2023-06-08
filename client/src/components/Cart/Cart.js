@@ -35,9 +35,10 @@ const Cart = (props) => {
       const cart = await idbPromise('cart', 'get');
       dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
     }
-
+    console.log("BEFORE",state.cart.length);
     if (!state.cart.length) {
       getCart();
+      console.log("AFTER", state.cart.length);
     }
   }, [state.cart.length, dispatch]);
 
@@ -92,7 +93,7 @@ const Cart = (props) => {
           {Auth.loggedIn() ? (
           <button className="purchaseCartButton" onClick={submitCheckout}>Purchase</button>
           ) : (
-            <span>(Log in to check out)</span>
+            <span>(log in to check out)</span>
           )}
         </div>
       </div>

@@ -43,8 +43,7 @@ const DashboardCard = (props) => {
     name,
     _id,
     price,
-    description,
-    Tag
+    description
   } = props;
 
   const { cart } = state
