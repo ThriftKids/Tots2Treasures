@@ -40,10 +40,11 @@ const DashboardCard = (props) => {
 
   const {
     img,
-    title,
+    name,
     _id,
     price,
-    desc
+    description,
+    Tag
   } = props;
 
   const { cart } = state
@@ -63,15 +64,15 @@ const DashboardCard = (props) => {
     <>
       <div className="dashboardCard">
         <div className="img">
-          <img src={img} alt={props.tag.split(" ")[0]} />
+          <img src={img} alt={name} />
         </div>
         <div className="row topRow">
-          <h2>{title}</h2>
+          <h2>{name}</h2>
           <p>${price}</p>
         </div>
 
         <div className="row bottomRow">
-          <p>{desc}</p>
+          <p>{description}</p>
 
         </div>
 
