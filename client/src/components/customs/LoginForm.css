@@ -1,0 +1,74 @@
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  background-color: bisque;
+  align-items: center;
+  height: 80.5vh;
+  padding-bottom: 1.1%;
+}
+
+.loginForm {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 3% 3% 4% 2%;
+  margin: 9% 0 8% 0;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+  background-color: rgb(191, 238, 238);
+  gap: 15px;
+}
+
+.centerContent1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.centerContent > p {
+  font-size: larger;
+  font-weight: 600;
+  gap: 15px;
+}
+
+.loginButtonCard {
+  padding: 2% 19%;
+  font-size: large;
+  border: none;
+  border-radius: 7px;
+  transition: all 0.5s ease-in-out;
+}
+
+.loginButtonCard:hover {
+  background-color: bisque;
+  color: rgb(4, 208, 248);
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.authInputField:focus,
+.authInputField[type="text"]:focus {
+  background-color: bisque;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+}
+
+.authInputField {
+    border: none;
+    border-radius: 5px;
+  }
+  @media only screen and (max-width: 540px){
+    .loginForm{
+      padding: 40px;
+      margin: 20px;
+    }
+  }
+
+  @media only screen and (max-width: 395px){
+   .bottomP{font-size: 15px;
+
+   }
+  }

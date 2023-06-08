@@ -1,0 +1,51 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px;
+  background-color: rgb(191, 238, 238);
+  top: 0;
+  height: 90px;
+}
+
+.t2tLogo {
+  width: 75px;
+  background-color: bisque;
+  border-radius: 50px;
+  margin: 10px;
+}
+
+.tabContainer {
+  display: flex;
+ 
+}
+@media only screen and (max-width: 622px){
+  .t2tLogo{
+    margin-top: 20px;
+    width:50px;
+    height: 50px;
+  }
+
+}
+
+@media only screen and (max-width: 584px){
+.cartLogo i{
+ font-size: 1rem;
+ padding: 0px;
+}
+a.headerLoginButton{
+ font-size: 15px;
+ 
+}
+.header{
+  padding: 0;
+}
+}
+@media only screen and (max-width: 380px){
+a.headerLoginButton{font-size:12px;}
+/* .t2tLogo{
+  width: 55%;
+} */
+.tabContainer{
+  height: 5px;
+}
+}

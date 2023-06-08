@@ -1,0 +1,207 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px;
+  align-items: end;
+}
+.navList {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  list-style: none;
+  gap: 20px;
+  padding-bottom: 4px;
+}
+
+.authButtons {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  font-size: larger;
+  font-weight: 400;
+  border-radius: 10px;
+  /* text-decoration: none;
+  color:black; */
+}
+
+.navLink {
+  padding: 5px 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: 0.5s ease-in-out;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.active {
+  background-color: bisque;
+  border: 1px solid black;
+  border-bottom: none;
+}
+
+.navList .navLink:hover {
+  color: rgb(4, 208, 248);
+  /* border-radius: 10px; */
+  /* background-color: bisque; */
+  transition: 0.5s;
+}
+.loginButton {
+  padding: 5px;
+  color: black;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+  font-weight: 500;
+}
+.loginButton:hover {
+  color: rgb(4, 208, 248);
+  border-radius: 10px;
+  background-color: bisque;
+  transition: 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 20px);
+}
+
+.signupButton {
+  padding: 5px;
+}
+.signupButton:hover {
+  color: rgb(4, 208, 248);
+  border-radius: 10px;
+  background-color: bisque;
+  transition: 0.5s;
+}
+
+.headerLoginButton {
+  padding: 5px;
+  transition: all 0.5s ease-in-out;
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 10px;
+}
+.headerLoginButton:hover {
+  color: rgb(4, 208, 248);
+  background-color: bisque;
+  transition: 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 20px);
+}
+
+.cartLogo {
+  font-size: 20px;
+  background-color: bisque;
+  color: black;
+  border: solid 2px;
+  border-color: black;
+  border-radius: 10px;
+  /* transition: background-color 0.7s, color 0.7s; */
+  transition: all 0.5s ease-in-out;
+}
+
+.cartLogo:hover {
+  background-color: rgb(4, 208, 248);
+  color: bisque;
+  border-color: bisque;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 20px);
+}
+@media only screen and (max-width: 706px) {
+  .nav {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 668px) {
+  .nav {
+    padding: 0;
+  }
+  .navList {
+    gap: 0;
+  }
+}
+
+@media only screen and (max-width: 622px) {
+  .nav {
+    padding: 0;
+  }
+  .navList {
+    gap: 0;
+  }
+  .authButtons {
+    gap: 0;
+  }
+  .header {
+    height: 80px;
+  }
+  .nav {
+    height: 80.5px;
+  }
+}
+@media only screen and (max-width: 545px) {
+  .header {
+    height: 80px;
+  }
+  .nav {
+    height: 82px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .navLink {
+    padding: 4px 5px;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  img.t2tLogo {
+    width: 50px;
+    height: 50px;
+  }
+  ul.authButtons {
+    margin: 0;
+    margin-right: 10px;
+    margin-top: 10px;
+    height: inherit;
+    flex-direction: column;
+    gap: 13px;
+  }
+  .navLink {
+    margin-left: 5px;
+    font-size: 15px;
+  }
+  .header {
+    height: 80px;
+  }
+  .nav {
+    height: 81px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .navLink {
+    font-size: smaller;
+  }
+  img.t2tLogo {
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    margin-left: 8px;
+    margin-top: 8px;
+  }
+  .header {
+    height: 80px;
+  }
+  .nav {
+    height: 82px;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .navLink {
+    margin-left: 5px;
+    font-size:12px;
+  }
+
+}

@@ -1,0 +1,98 @@
+.signupContainer {
+  display: flex;
+  justify-content: center;
+  background-color: bisque;
+  align-items: center;
+  height: 89vh;
+  padding-bottom: 25px;
+}
+
+.signupForm {
+  width:500px;
+  display: flex;
+  flex-direction: column;
+  padding: 3% 3% 4% 2%;
+  margin: 9% 0 9% 0;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+  background-color: rgb(191, 238, 238);
+  gap: 15px;
+}
+.centerContent{
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.centerContent>p{
+  align-self: center;
+  font-size: larger;
+  font-weight:600;
+}
+
+.loginButtonCard{
+  align-self: center;
+  padding: 2% 19%;
+  font-size: large;
+  border: none;
+  border-radius: 7px;
+  transition: all 0.5s ease-in-out;
+  
+}
+.loginButtonCard:hover{
+  background-color: bisque;
+  color: rgb(4, 208, 248); 
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.centerContent1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Applying background color and border to focused input fields */
+.authInputField:focus,
+.authInputField[type="text"]:focus {
+  background-color: bisque;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+}
+
+.authInputField{
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%;
+  height: 30px;
+}
+.bottomP{
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 2560px) { 
+  .signupContainer{
+    height: 80vh;
+  }
+}
+
+@media only screen and (max-width: 555px) { 
+  .signupContainer{
+   padding:35px;
+  }
+  .signupForm{
+    padding: 25px;
+  }
+}
+
+
+@media only screen and (max-width: 330px){
+ .bottomP{
+  font-size: 15px;
+  margin-bottom: 5px;
+ }
+}

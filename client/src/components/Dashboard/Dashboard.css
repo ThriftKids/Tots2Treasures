@@ -1,0 +1,316 @@
+.productsContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  height: 70.7vh;
+  overflow-y: scroll;
+  padding-top: 20px;
+  margin-bottom: 1.1%;
+  animation: blowUpModal .9s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+
+}
+
+@keyframes blowUpModal {
+  0% {
+    transform:scale(0);
+  }
+  100% {
+    transform:scale(1);
+  }
+}
+
+.tagList {
+
+
+  border-top: 1px solid black;
+
+  text-transform: capitalize;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0 0 15px 0;
+
+
+  padding: 10px;
+
+  background-color: bisque;
+  font-size: larger;
+  font-weight: bold;
+}
+.tagList .tag {
+  padding: 5px 20px;
+  border-radius: 10px;
+  transition: 0.2s ease-in-out;
+}
+
+.dashboardCard {
+  background: rgb(255, 255, 255);
+  transition: 0.5s ease-in-out;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(179, 242, 255, 1) 100%
+  );
+  padding: 10px;
+  width: 500px;
+  height: fit-content;
+  border-radius: 18px;
+  /* transition: 5s; */
+}
+
+.dashboardCard .img {
+  height: 300px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.dashboardCard img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  background: 100%;
+}
+
+.dashboardCard .topRow {
+  margin-top: 20px;
+  margin-right: 20px;
+  justify-content: space-between;
+}
+.dashboardCard .topRow p {
+  width: 25%;
+  font-size: 20px;
+  text-align: end;
+}
+.dashboardCard .topRow h2 {
+  width: 70%;
+}
+.dashboardCard .bottomRow {
+  display: flex;
+  justify-content: space-between;
+}
+.dashboardCard .bottomRow a {
+  width: 25%;
+  text-align: end;
+}
+.dashboardCard .bottomRow p {
+  width: 70%;
+}
+.addToCartButton{
+  color: white;
+  background-color: rgb(0, 119, 255);
+  margin-left: 15px;
+  border-radius: 10px;
+  border-style: none;
+  width: 130px;
+  height: 30px;
+  font-weight: bold;
+  transition: all 0.5s ease-in-out;
+}
+
+.rowForButtons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* hovers */
+.addToCartButton:hover {
+  color: rgb(0, 119, 255);
+  background-color: white;
+  border: 1px solid;
+  border-color: rgb(0, 119, 255);
+  cursor: pointer;
+
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+
+}
+.tagList .tag:hover {
+  background-color: rgba(179, 242, 255, 1);
+  color: rgb(210, 134, 41);
+  cursor: pointer;
+  transition: 0.5s;
+
+
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+
+}
+
+.dashboardCard:hover {
+  transition: 0.5s linear;
+  background: linear-gradient(
+    180deg,
+    rgba(179, 242, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  transform: translateY(-10px);
+  /* transform: translateY(-2px); */
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 1px 5px rgba(0, 0, 0, 0.22);
+}
+
+/* @media only screen and (max-width: 584px){
+.tagList{
+font-size: medium;
+}
+
+} */
+@media only screen and (max-width: 540px)
+ {
+  .tagList {
+    font-size: medium;
+    gap: 10px;
+  }
+  .tagList .tag {
+    padding: 0;
+  }
+
+  .dashboardCard {
+    width: 80vw;
+  }
+  .productsContainer{
+    height: 75vh;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .tagList {
+    font-size: smaller;
+    gap: 1px;
+  }
+  .bottomRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .dashboardCard .bottomRow a{
+    width: auto;
+  }
+  .dashboardCard .bottomRow p{
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 340px) {
+  .tagList .tag {
+    font-size: 12px;
+  }
+}
+
+
+.dashboardModal{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalHeader{
+  display: flex;
+  justify-content: space-between;
+}
+
+.modalCartButton{
+  background-color: rgb(0, 119, 255);
+  width: fit-content;
+  align-self: center;
+  padding: 5px 15px;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+.modalCartButton:hover{
+  color: rgb(0, 119, 255);
+  background-color: white;
+  border: 1px solid;
+  border-color: rgb(0, 119, 255);
+  cursor: pointer;
+
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.dashboardModal-content{
+  width: 600px;
+  padding: 0px 20px;
+  
+  background-color: aliceblue;
+  box-shadow: 0px 0px 25px 1px rgba(0,0,0,0.54);
+  border-radius: 18px;
+
+  
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 20px;
+  background-color: rgba(255,255,255,.45);
+  box-shadow:  0 0 10px 1px rgba(0,0,0,.25);
+  backdrop-filter: blur(15px);
+  
+}
+
+.dashboardModal-body{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+
+.dashboardModal-body img{
+  align-self: center;
+  border-radius: 10px;
+  width: 80%;
+}
+
+.viewMoreDashboard{
+  margin: 10px 0px;
+  padding: 5px 15px;
+  font-weight: bold;
+  width: fit-content;
+  border-radius: 10px;
+  background-color: bisque;
+  color: rgb(0, 119, 255);
+  transition: all 0.5s ease-in-out;
+}
+
+.viewMoreDashboard:hover{
+  cursor: pointer;
+  background-color: rgba(179, 242, 255, 1);
+  color: black;
+  border: 1px solid;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.modal-tags{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.modal-tags p{
+  padding: 5px 10px;
+  background-color: bisque;
+  border-radius: 10px;
+}
+
+.modal-tags p:hover{
+  box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.54);
+
+}
