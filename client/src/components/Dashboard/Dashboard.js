@@ -92,16 +92,16 @@ const Dashboard = () => {
           {state.products.length ? (
           <div className="flex-row">
             {filterProducts().map((card) => (
-              <DashboardCard
-                _id={card._id}
-                name={card.name}
-                Tag={card.Tag}
-                price={card.price}
-                description={card.description}
-                img={card.image}
-                key={card._id}
-              />
-            ))}
+                <DashboardCard
+                  _id={card._id}
+                  name={card.name}
+                  Tag={card.Tag}
+                  price={card.price}
+                  description={card.description}
+                  img={card.image}
+                  key={card._id}
+                />
+              ))}
           </div>
         ) : (
           <h3>You haven't added any products yet!</h3>
