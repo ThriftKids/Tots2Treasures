@@ -1,12 +1,13 @@
 import { useReducer } from "react";
 import {
-  UPDATE_POST,
-  UPDATE_PRODUCTS,
-  ADD_TO_CART,
-  REMOVE_FROM_CART,
-  ADD_MULTIPLE_TO_CART,
-  UPDATE_CURRENT_TAG,
-  UPDATE_TAGS
+    UPDATE_POST,
+    UPDATE_PRODUCTS,
+    ADD_TO_CART,
+    REMOVE_FROM_CART,
+    ADD_MULTIPLE_TO_CART,
+    UPDATE_CURRENT_TAG,
+    UPDATE_TAGS,
+    ADD_TO_INVENTORY
 } from "./actions";
 
 export const reducer = (state, action) => {
@@ -46,7 +47,7 @@ export const reducer = (state, action) => {
         cartOpen: newState.length > 0,
         cart: newState,
       };
-    
+
     case UPDATE_TAGS:
       return {
         ...state,
@@ -60,6 +61,12 @@ export const reducer = (state, action) => {
         ...state,
         currentTag: action.currentTag
       }
+
+    case ADD_TO_INVENTORY:
+      return {
+        ...state,
+        products: [...state.products, action.product],
+      };
 
     default:
       return state;
