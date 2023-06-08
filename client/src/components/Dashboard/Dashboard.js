@@ -84,7 +84,7 @@ const Dashboard = () => {
     <div className='dashboard'>
         <ul className='tagList'>
           {addTags().map((tag) => (
-            <li><p className='tag' id={tag._id} onClick={handleClick}>{tag.name}</p></li>
+            <li key={tag._id}><p className='tag' id={tag._id} onClick={handleClick}>{tag.name}</p></li>
           ))}
         </ul>
 
