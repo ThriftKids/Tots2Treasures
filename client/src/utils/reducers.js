@@ -31,11 +31,9 @@ export const reducer = (state, action) => {
       };
 
     case ADD_MULTIPLE_TO_CART:
-      const updatedCart = [...state.cart, ...action.products];
-      const uniqueCart = Array.from(new Set(updatedCart));
       return {
         ...state,
-        cart: uniqueCart,
+        cart: [...state.cart, ...action.products],
       };
 
     case REMOVE_FROM_CART:

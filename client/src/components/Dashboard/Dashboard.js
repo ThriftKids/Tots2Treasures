@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 import "./Dashboard.css"
 import DashboardCard from '../customs/DashboardCard'
-import { useQuery } from '@apollo/client';
+import testImage from '../images/testImage.jpg'
+import one from '../images/one.jpg'
+import { useLazyQuery, useQuery } from '@apollo/client';
 import { useStoreContext } from '../../utils/GlobalState';
 import {
   UPDATE_CURRENT_TAG,
-  UPDATE_PRODUCTS,
   UPDATE_TAGS
 } from '../../utils/actions';
 import { 
-  QUERY_PRODUCTS,
   QUERY_TAGS, 
 } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
@@ -18,20 +18,18 @@ const Dashboard = () => {
 
   const [state, dispatch] = useStoreContext();
 
-  const { currentTag } = state;
+  const { loading, data: tagData } = useQuery(QUERY_TAGS);
 
-  const { tagLoading, data: tagData } = useQuery(QUERY_TAGS);
-  const { productLoading, data: productData } = useQuery(QUERY_PRODUCTS);
   useEffect(() => {
     if (tagData) {
       dispatch({
         type: UPDATE_TAGS,
         tags: tagData.tags,
       });
-      tagData.tags.forEach((Tag) => {
-        idbPromise('tags', 'put', Tag);
+      tagData.tags.forEach((tag) => {
+        idbPromise('tags', 'put', tag);
       });
-    } else if (!tagLoading) {
+    } else if (!loading) {
       idbPromise('tags', 'get').then((tags) => {
         dispatch({
           type: UPDATE_TAGS,
@@ -39,26 +37,7 @@ const Dashboard = () => {
         });
       });
     }
-  }, [tagData, tagLoading, dispatch]);
-
-  useEffect(() => {
-    if (productData) {
-      dispatch({
-        type: UPDATE_PRODUCTS,
-        products: productData.products,
-      });
-      productData.products.forEach((product) => {
-        idbPromise('products', 'put', product);
-      });
-    } else if (!productLoading) {
-      idbPromise('products', 'get').then((products) => {
-        dispatch({
-          type: UPDATE_PRODUCTS,
-          products: products,
-        });
-      });
-    }
-  }, [productData, productLoading, dispatch]);
+  }, [tagData, loading, dispatch]);
 
   const handleClick = (id) => {
     dispatch({
@@ -66,47 +45,55 @@ const Dashboard = () => {
       currentTag: id,
     });
   };
-
-  function addTags() {
-    return Array.from(new Set(state.tags));
-  }
-
-  function filterProducts() {
-    if (!currentTag) {
-      return state.products;
-    }
-    return state.products.filter(
-      (product) => product.Tag._id === currentTag.target.id
-    );
-  }
-
   return (
     <div className='dashboard'>
         <ul className='tagList'>
-          {addTags().map((tag) => (
-            <li key={tag._id}><p className='tag' id={tag._id} onClick={handleClick}>{tag.name}</p></li>
-          ))}
+          <li><p className='tag' id="toys" onClick={handleClick}>toys</p></li>  
+          <li><p className='tag' id="electronics" onClick={handleClick}>electronics</p></li>  
+          <li><p className='tag' id="outdoor" onClick={handleClick}>outdoor</p></li>  
+          <li><p className='tag' id="kitchen" onClick={handleClick}>kitchen</p></li>  
+          <li><p className='tag' id="clothing" onClick={handleClick}>clothing</p></li>  
         </ul>
 
+
+        {/* Tag sorting code
         <div className='productsContainer'>            
-          {state.products.length ? (
-          <div className="flex-row">
-            {filterProducts().map((card) => (
-                <DashboardCard
-                  _id={card._id}
-                  name={card.name}
-                  Tag={card.Tag}
-                  price={card.price}
-                  description={card.description}
-                  img={card.image}
-                  key={card._id}
-                />
-              ))}
-          </div>
-        ) : (
-          <h3>You haven't added any products yet!</h3>
-        )}
-      </div>
+            {state.currentTag ? (
+            state.products.map((card) => {
+              if (card.tag === state.currentTag.target.id) {
+                return (
+                  <DashboardCard
+                    title={card.title}
+                    tag={card.tag}
+                    price={card.price}
+                    desc={card.desc}
+                    img={card.img}
+                    key={card._id}
+                  />
+                );
+              }
+              return null; 
+            })):
+            (state.products.map((card) => {
+                return (
+                  <DashboardCard
+                    title={card.title}
+                    tag={card.tag}
+                    price={card.price}
+                    desc={card.desc}
+                    img={card.img}
+                    key={card._id}
+                  />
+                );
+              }
+            ))
+            }
+      </div> */}
+      <div className='productsContainer'>
+            <DashboardCard title= "Product one" tag="toy" price="100" desc="lorem ipsum somthing somtething bigger and longer" img={one} link="/" _id="1" key="1"/>
+            <DashboardCard title= "Product two" tag="clothing kitchen" price="80" desc="lorem ipsum somthing somtething bigger and longer" img={testImage} link="/" _id="2" key="2"/>
+
+        </div>
     </div>
   )
 }

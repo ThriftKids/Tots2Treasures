@@ -2,13 +2,14 @@
 import React, { useEffect } from 'react'
 import './Cart.css'
 import CartCard from './Card'
+import one from "../images/one.jpg";
+import testImage from "../images/testImage.jpg";
 import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/client';
 import { useStoreContext } from '../../utils/GlobalState';
 import { QUERY_CHECKOUT } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import { ADD_MULTIPLE_TO_CART } from '../../utils/actions';
-import Auth from '../../utils/auth';
 
 const stripePromise = loadStripe('pk_test_51NDyqbLqFdFAiVSCxI8bLlgSQlitxKVUwsigIH88RBslnH6uOD3Xbngk6xeK2F9ZD7kW4KSJKplWZaeLlLeesOBt00F9uUclmB');
 
@@ -35,6 +36,7 @@ const Cart = (props) => {
       const cart = await idbPromise('cart', 'get');
       dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
     }
+
     if (!state.cart.length) {
       getCart();
     }
@@ -44,8 +46,11 @@ const Cart = (props) => {
   // Add each item id to the productIds array and then invoke the getCheckout query passing an object containing the id for all our products
   function submitCheckout() {
     const productIds = [];
+
     state.cart.forEach((item) => {
+      for (let i = 0; i < item.purchaseQuantity; i++) {
         productIds.push(item._id);
+      }
     });
 
     getCheckout({
@@ -59,6 +64,7 @@ const Cart = (props) => {
   function calculateTotal() {
     let sum = 0;
     state.cart.forEach((item) => {
+      console.log(item);
       sum += Number(item.price);
     });
     return sum.toFixed(2);
@@ -78,21 +84,17 @@ const Cart = (props) => {
               <CartCard
                 key={product._id}
                 id={product._id}
-                name={product.name}
+                title={product.title}
                 price={`$${product.price}`}
-                img={product.img}
-                description={product.description}
+                img={product.image}
+                desc={product.desc}
                 product = {product}
               />
             ))}
         </div>
         <div className="cartFooterContainer">
           <p>Total: ${calculateTotal()}</p>
-          {Auth.loggedIn() ? (
           <button className="purchaseCartButton" onClick={submitCheckout}>Purchase</button>
-          ) : (
-            <span>(Log in to check out)</span>
-          )}
         </div>
       </div>
     </div>

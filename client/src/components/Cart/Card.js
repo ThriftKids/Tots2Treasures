@@ -3,7 +3,7 @@ import { idbPromise } from '../../utils/helpers';
 import { useStoreContext } from "../../utils/GlobalState";
 import { REMOVE_FROM_CART} from '../../utils/actions';
 
-const CartCard = ({ img, name, price, description, product, _id }) => {
+const CartCard = ({ img, title, price, desc, product, id }) => {
   const [, dispatch] = useStoreContext();
 
   const removeItem = item => {
@@ -11,21 +11,21 @@ const CartCard = ({ img, name, price, description, product, _id }) => {
       type: REMOVE_FROM_CART,
       _id: item._id
     });
-  idbPromise('cart', 'delete', { ...item }); //FIX delete item broken down?
+  idbPromise('cart', 'delete', { ...item });
 };
 
 
   return (
     <div className="cartCard">
-      <div className=" nameAndPrice">
-        <img src={img} alt={name}/>
+      <div className=" titleAndPrice">
+        <img src={img} alt={title}/>
         <div className="column content">
-          <h3>{name}</h3>
+          <h3>{title}</h3>
           <p>{price}</p>
         </div>
       </div>
 
-      <p>{description}</p>
+      <p>{desc}</p>
       <i className="fa-sharp fa-solid fa-trash" onClick={() => removeItem(product)}></i>
 
     </div>

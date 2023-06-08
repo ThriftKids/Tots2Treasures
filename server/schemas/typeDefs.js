@@ -13,7 +13,7 @@ const typeDefs = gql`
     description: String
     image: String
     price: Float
-    Tag: Tag
+    tag: Tag
     userId: String
   }
 
@@ -22,7 +22,7 @@ const typeDefs = gql`
     firstName: String
     lastName: String
     email: String
-    orders: [Order]
+    products: [Product]
   }
 
   type Checkout {
@@ -41,7 +41,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    products(Tag: ID, name: String): [Product]
+    products: [Product]
     product(_id: ID!): Product
     user: User
     order(_id: ID!): Order

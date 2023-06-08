@@ -5,29 +5,17 @@ const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY);
 
 const resolvers = {
   Query: {
-    products: async (parent, { Tag, name }) => {
-      const params = {};
-
-      if (Tag) {
-        params.Tag = Tag;
-      }
-
-      if (name) {
-        params.name = {
-          $regex: name
-        };
-      }
-
-      return await Product.find(params).populate('Tag');
+    products: async () => {
+      return await Product.findAll().populate('tag');
     },
     product: async (parent, { _id }) => {
-      return await Product.findById(_id).populate('Tag');
+      return await Product.findById(_id).populate('tag');
     },
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
           path: 'orders.products',
-          populate: 'Tag'
+          populate: 'tags'
         });
 
         user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
@@ -41,8 +29,9 @@ const resolvers = {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
           path: 'orders.products',
-          populate: 'Tag'
+          populate: 'tags'
         });
+
         return user.orders.id(_id);
       }
 
@@ -54,17 +43,20 @@ const resolvers = {
       const line_items = [];
 
       const { products } = await order.populate('products');
+
       for (let i = 0; i < products.length; i++) {
         const product = await stripe.products.create({
           name: products[i].name,
           description: products[i].description,
           images: [`${url}/images/${products[i].image}`]
         });
+
         const price = await stripe.prices.create({
           product: product.id,
           unit_amount: products[i].price * 100,
           currency: 'cad',
         });
+
         line_items.push({
           price: price.id,
           quantity: 1
@@ -78,16 +70,17 @@ const resolvers = {
         success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${url}/`
       });
+
       return { session: session.id };
     },
-    sortedProduct: async (parent, { Tag }) => {
+    sortedProduct: async (parent, { tag }) => {
       const params = {};
 
-      if (Tag) {
-        params.Tag = Tag;
+      if (tag) {
+        params.tag = tag;
       }
 
-      return await Product.find(params).populate('Tag');
+      return await Product.find(params).populate('tag');
     },
     tags: async () => {
       return await Tag.find();

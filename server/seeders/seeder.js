@@ -36,20 +36,11 @@ async function seedDB() {
   // Create some tags
   const tags = await db.Tag.create([
     {
-      name: "Toys"
+      name: 'Electronics',
     },
     {
-      name: "Electronics"
+      name: 'Clothes',
     },
-    {
-      name: "Clothing"
-    },
-    {
-      name: "Kitchen"
-    },
-    {
-      name: "Outdoor"
-    }
   ]);
 
   // Create some products, associated with users and tags
@@ -57,20 +48,18 @@ async function seedDB() {
     {
       name: 'The Great Book',
       description: 'A really great book',
-      image: '/static/media/one.ee5ade4ea5af4a4d92f8.jpg',
+      image: '/path/to/image',
       price: 19.99,
       userId: users[1]._id,
-      productId: '1',
-      Tag: tags[0],
+      Tag: tags[1]._id,
     },
     {
       name: 'Super Cool Gadget',
       description: 'A really cool gadget',
-      image: '/static/media/testImage.a39c52386fb44f523f98.jpg',
+      image: '/path/to/image',
       price: 99.99,
       userId: users[0]._id,
-      productId: '2',
-      Tag: tags[1]._id,
+      Tag: tags[0]._id,
     },
   ]);
 
