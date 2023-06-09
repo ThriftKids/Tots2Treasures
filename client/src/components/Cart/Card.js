@@ -11,7 +11,7 @@ const CartCard = ({ img, name, price, description, product, _id }) => {
       type: REMOVE_FROM_CART,
       _id: item._id
     });
-  idbPromise('cart', 'delete', { ...item }); //FIX delete item broken down?
+  idbPromise('cart', 'delete', { ...item });
 };
 
 
