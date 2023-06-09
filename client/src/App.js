@@ -46,7 +46,7 @@ const App = () => {
           <StoreProvider>
             <Header />
               <Routes>
-                <Route exact path="/" element={<Dashboard />} />
+                <Route path="/" element={<Dashboard />} />
 
                 <Route path="/purchases" element={<Purchases />} />
                 <Route path="/inventory" element={<Inventory />} />
