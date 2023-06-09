@@ -48,15 +48,15 @@ const App = () => {
               <Routes>
                 <Route exact path="/" element={<Dashboard />} />
 
-                <Route path="/purchases" element={<Purchases />} />
-                <Route path="/inventory" element={<Inventory />} />
+                <Route exact path="/purchases" element={<Purchases />} />
+                <Route exact path="/inventory" element={<Inventory />} />
 
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/signup" element={<SignupForm />} />
-                <Route path="/login" element={<LoginForm />} />
-                <Route path="/logout" element={<Navigate to="/"/>} />
-                <Route path="/final" element={<Final transactionFailed={true} />}/>
-                <Route path="*" element={<Error/>} />
+                <Route exact path="/cart" element={<Cart />} />
+                <Route exact path="/signup" element={<SignupForm />} />
+                <Route exact path="/login" element={<LoginForm />} />
+                <Route exact path="/logout" element={<Navigate to="/"/>} />
+                <Route exact path="/final" element={<Final transactionFailed={true} />}/>
+                <Route exact path="*" element={<Error/>} />
               </Routes>
             <Footer />
           </StoreProvider>
