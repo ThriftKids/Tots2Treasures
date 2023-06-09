@@ -2,6 +2,10 @@
 
 Tots2Treasures is an online platform that enables users to resell their children's unused toys or clothes. It provides a convenient and user-friendly marketplace where sellers can list items for sale, and buyers can browse and purchase these items at affordable prices.
 
+![image (4)](https://github.com/ThriftKids/Tots2Treasures/assets/118566376/b5b60bcc-3f4a-4f7a-a767-ae75f05aa619)
+
+Deployed App: https://tots-2treasures.herokuapp.com/
+
 ## Features
 
 - **User Registration and Authentication**: Users can create accounts and log in to the website, allowing them to access all the features, including posting items for sale and making purchases.

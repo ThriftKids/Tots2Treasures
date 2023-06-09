@@ -75,10 +75,10 @@ const DashboardCard = (props) => {
       />
       <div className="dashboardCard">
         <div className="img">
-          <img src={img} alt={props.tag.split(" ")[0]} />
+          <img src={img} alt={name} />
         </div>
         <div className="row topRow">
-          <h2>{title}</h2>
+          <h2>{name}</h2>
           <p>${price}</p>
         </div>
 

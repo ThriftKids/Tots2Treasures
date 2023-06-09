@@ -3,7 +3,7 @@ import { idbPromise } from '../../utils/helpers';
 import { useStoreContext } from "../../utils/GlobalState";
 import { REMOVE_FROM_CART} from '../../utils/actions';
 
-const CartCard = ({ img, title, price, desc, product, id }) => {
+const CartCard = ({ img, name, price, description, product, _id }) => {
   const [, dispatch] = useStoreContext();
 
   const removeItem = item => {
@@ -17,15 +17,15 @@ const CartCard = ({ img, title, price, desc, product, id }) => {
 
   return (
     <div className="cartCard">
-      <div className=" titleAndPrice">
-        <img src={img} alt={title}/>
+      <div className=" nameAndPrice">
+        <img src={img} alt={name}/>
         <div className="column content">
-          <h3>{title}</h3>
+          <h3>{name}</h3>
           <p>{price}</p>
         </div>
       </div>
 
-      <p>{desc}</p>
+      <p>{description}</p>
       <i className="fa-sharp fa-solid fa-trash" onClick={() => removeItem(product)}></i>
 
     </div>

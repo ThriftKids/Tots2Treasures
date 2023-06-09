@@ -12,6 +12,12 @@
 
 }
 
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 @keyframes blowUpModal {
   0% {
     transform:scale(0);
@@ -57,6 +63,7 @@
   width: 500px;
   height: fit-content;
   border-radius: 18px;
+  margin: 10px;
   /* transition: 5s; */
 }
 

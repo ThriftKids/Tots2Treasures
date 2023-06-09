@@ -8,8 +8,8 @@ export const QUERY_PRODUCTS = gql`
       description
       image
       price
-      tag {
-        name
+      Tag {
+        _id
       }
     }
   }
@@ -41,7 +41,7 @@ export const SORTED_PRODUCT = gql`
         description
         image
         price
-        tag {
+        Tag {
           name
         }
       }
