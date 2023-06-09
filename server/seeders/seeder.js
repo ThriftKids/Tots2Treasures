@@ -58,7 +58,7 @@ async function seedDB() {
       name: 'The Great Book',
       description: 'A really great book',
       image: '/static/media/one.ee5ade4ea5af4a4d92f8.jpg',
-      price: 19.99,
+      price: 20,
       userId: users[1]._id,
       productId: '1',
       Tag: tags[0],

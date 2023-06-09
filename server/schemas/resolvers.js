@@ -1,7 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Product, Tag, Order } = require('../models');
 const { signToken } = require('../utils/auth');
-const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY);
+const stripe = require('stripe')("sk_test_51NDyqbLqFdFAiVSCOnePgg7MuLISLzL1g8x64P5f5N55fPLJhCfCpkWip9xe5SVRk87wikOGFRgPcovzvtt4P0sW007XHQ22Q9");
 
 const resolvers = {
   Query: {
@@ -49,10 +49,12 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
     checkout: async (parent, args, context) => {
+      console.log("checkout");
       const url = new URL(context.headers.referer).origin;
       const order = new Order({ products: args.products });
       const line_items = [];
 
+      try {
       const { products } = await order.populate('products');
       for (let i = 0; i < products.length; i++) {
         const product = await stripe.products.create({
@@ -75,10 +77,13 @@ const resolvers = {
         payment_method_types: ['card'],
         line_items,
         mode: 'payment',
-        success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+        success_url: `${url}/`,
         cancel_url: `${url}/`
       });
       return { session: session.id };
+    } catch (e) {
+      console.log(e);
+    }
     },
     sortedProduct: async (parent, { Tag }) => {
       const params = {};
