@@ -35,7 +35,7 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const client = new ApolloClient({
-  uri: 'https://tots-2treasures.herokuapp.com/graphql', 
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
