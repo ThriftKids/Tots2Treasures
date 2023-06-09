@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const db = require('../models');
+const db = require('../models/Index');
 
 async function seedDB() {
   // Connect to MongoDB
