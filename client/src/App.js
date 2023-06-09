@@ -35,7 +35,7 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const client = new ApolloClient({
-  link: authLink.concat(httpLink),
+  uri: 'https://tots-2treasures.herokuapp.com/graphql', 
   cache: new InMemoryCache(),
 });
 
@@ -48,8 +48,8 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Dashboard />} />
 
-                <Route path="https://tots-2treasures.herokuapp.com/purchases" element={<Purchases />} />
-                <Route path="https://tots-2treasures.herokuapp.com/inventory" element={<Inventory />} />
+                <Route path="/purchases" element={<Purchases />} />
+                <Route path="/inventory" element={<Inventory />} />
 
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/signup" element={<SignupForm />} />
